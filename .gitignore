@@ -20,3 +20,4 @@ vendor/*
 !vendor/.gitkeep
 node_modules/
 bower_components/
+web/app/themes/*/assets/*/dist
