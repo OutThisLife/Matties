@@ -7,4 +7,4 @@ composer install
 touch .env
 ```
 
-Request database credentials for `.env` and then run `composer dev`
+Request database credentials for `.env` and then run `yarn dev`
