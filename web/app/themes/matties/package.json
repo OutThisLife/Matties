@@ -36,7 +36,8 @@
     "raf": "^3.3.2",
     "react": "^15",
     "react-dom": "^15.5.4",
-    "rx": "^4.1.0"
+    "rx": "^4.1.0",
+    "ws": "^3.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6",

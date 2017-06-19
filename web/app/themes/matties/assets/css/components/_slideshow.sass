@@ -1,0 +1,32 @@
+slideshow
+    $dist: 110px
+
+    display: block
+    z-index: 100
+    +cover(fixed)
+
+    &:before, &:after,
+    figure:after
+        content: ''
+        z-index: 3
+        position: absolute
+        left: 0
+        top: 0
+        bottom: 0
+        width: 121px
+        background: linear-gradient(to left, rgba(#000, 0), rgba(#000, .25))
+
+    &:after
+        left: auto
+        right: 0
+        transform: scaleX(-1)
+
+    figure
+        +cover
+
+        &:after
+            right: 0
+            top: auto
+            width: auto
+            height: 242px
+            background: linear-gradient(to bottom, rgba(#000, 0), rgba(#000, .25))

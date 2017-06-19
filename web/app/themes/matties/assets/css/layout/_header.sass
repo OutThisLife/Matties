@@ -1,7 +1,12 @@
 #header
 	z-index: 500
-	+cover
+	display: flex
+	width: 100%
+	align-items: center
+	justify-content: space-between
+	+cover(fixed)
 	bottom: auto
+	padding: $pad
 	+transition(.35s ease-in-out)
 
 	@media (min-width: 767px)
@@ -10,20 +15,35 @@
 	@media (max-width: 767px)
 		position: absolute
 
-	ul, li
-		display: inline
-		margin: 0
-		padding: 0
-
-	li a
+	a
 		display: inline-block
+		@extend %supText
 		vertical-align: middle
 
-	ul li
-		position: relative
+	svg
+		fill: $blue
+		transition: .3s ease-in-out
 
-	ul > li:not(:last-child) > a
-		margin-right: 28px
+	.burger
+		top: -2px
+		margin: 0 0 0 10px
 
-		@media (max-width: 1280px)
-			margin-right: 15px
+.burger
+	cursor: pointer
+	display: inline-block
+	position: relative
+	vertical-align: middle
+	width: 24px
+	border: solid $blue
+	border-width: 1.5px 0
+	padding: 5.5px 0
+
+	&:before
+		content: ''
+		display: inherit
+		position: absolute
+		top: calc(50% - 1px)
+		left: 0
+		right: 0
+		height: 1.5px
+		background: $blue

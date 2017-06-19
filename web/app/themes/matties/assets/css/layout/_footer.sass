@@ -1,2 +1,46 @@
 #footer
+	z-index: 500
+	+cover(fixed)
+	top: auto
+
+#footer-top
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding: $pad
+
+	a
+		@extend %supText
+		color: $white
+
+#footer-bottom
+	display: flex
+	position: relative
+	justify-content: center
+	align-items: center
+	text-align: center
+	padding: $pad / 2 $pad
+	background: $peach
+
+	p
+		color: $blue
+		font-size: 14px
+		letter-spacing: tracking(75)
+		margin: 0
+
+	a
+		margin-left: 50px
+
+	.exit
+		position: absolute
+		right: $pad
+
+.exit
+	@extend .burger
 	padding: 0
+	height: 0
+	border-bottom-width: 0
+	transform: rotate(45deg)
+
+	&:before
+		transform: rotate(-90deg)

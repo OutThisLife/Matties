@@ -7,21 +7,30 @@
 // -----------------------------------------------
 
 // Dimensions
-$maxWidth: 1310px
+$maxWidth: 752px
 $pad: 25px
 
 // Fonts
-$font: Arial, sans-serif
+$font: "Brandon Grotesque", sans-serif
+
+%supText
+    font-weight: 700
+    font-size: 11px
+    line-height: 2.36
+    text-transform: uppercase
 
 // Colours
-$default: #222
+$default: #181818
+$blue: #4E5B84
+$peach: #EDBA9D
+$lavander: #C5ADBB
+$white: #ECEBE2
 
 // -----------------------------------------------
 
 @import generics
 
 @import layout/_header
-@import layout/_header-mobile
 @import layout/_footer
 
 // -----------------------------------------------
@@ -34,3 +43,4 @@ $default: #222
 @import components/_icons
 @import components/_forms
 @import components/_button
+@import components/_slideshow
