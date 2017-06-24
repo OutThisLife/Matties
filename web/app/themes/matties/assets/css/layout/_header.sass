@@ -24,26 +24,10 @@
 		fill: $blue
 		transition: .3s ease-in-out
 
-	.burger
-		top: -2px
-		margin: 0 0 0 10px
+	.toggle-menu
+		&.is-open
+			color: transparent
 
-.burger
-	cursor: pointer
-	display: inline-block
-	position: relative
-	vertical-align: middle
-	width: 24px
-	border: solid $blue
-	border-width: 1.5px 0
-	padding: 5.5px 0
-
-	&:before
-		content: ''
-		display: inherit
-		position: absolute
-		top: calc(50% - 1px)
-		left: 0
-		right: 0
-		height: 1.5px
-		background: $blue
+		.burger
+			top: -2px
+			margin: 0 0 0 10px

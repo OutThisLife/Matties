@@ -1,0 +1,37 @@
+.burger
+	cursor: pointer
+	display: inline-block
+	position: relative
+	vertical-align: middle
+	width: 24px
+	border: solid $blue
+	border-width: 1.5px 0
+	padding: 5.5px 0
+
+	&:before
+		content: ''
+		display: inherit
+		position: absolute
+		top: calc(50% - 1px)
+		left: 0
+		right: 0
+		height: 1.5px
+		background: $blue
+
+	.is-open &
+		@extend .exit
+		border: 0
+
+		&:before
+			visibility: hidden
+
+// -----------------------------------------------
+
+.exit
+	cursor: pointer
+	padding: 0
+	width: 24px
+	height: 17px
+	text-indent: -9999em
+	border-bottom-width: 0
+	background: url(../../img/exit.svg) center no-repeat

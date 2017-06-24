@@ -251,7 +251,8 @@ var Menu = function (_PureComponent) {
 
 			Array.from(document.getElementsByClassName('toggle-menu')).forEach(function ($a) {
 				$a.addEventListener('click', function () {
-					return $menu.classList.toggle('show');
+					$menu.classList.toggle('show');
+					$a.classList.toggle('is-open');
 				});
 			});
 

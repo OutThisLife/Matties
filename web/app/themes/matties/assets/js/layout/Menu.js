@@ -11,7 +11,10 @@ class Menu extends PureComponent {
 		const $scroll = this.el.querySelector('.scroller')
 
 		Array.from(document.getElementsByClassName('toggle-menu')).forEach($a => {
-			$a.addEventListener('click', () => $menu.classList.toggle('show'))
+			$a.addEventListener('click', () => {
+				$menu.classList.toggle('show')
+				$a.classList.toggle('is-open')
+			})
 		})
 
 		this.el.addEventListener('mousewheel', e => {
