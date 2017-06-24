@@ -1,5 +1,5 @@
 #footer
-	z-index: 500
+	z-index: 100
 	+cover(fixed)
 	top: auto
 
@@ -36,12 +36,9 @@
 		right: $pad
 
 .exit
-	@extend .burger
+	cursor: pointer
 	padding: 0
-	height: 0
+	+sq(17px)
 	text-indent: -9999em
 	border-bottom-width: 0
-	transform: rotate(45deg)
-
-	&:before
-		transform: rotate(-90deg)
+	background: url(../../img/exit.svg)

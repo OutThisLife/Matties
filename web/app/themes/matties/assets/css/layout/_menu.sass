@@ -1,0 +1,39 @@
+#menu
+    z-index: 499
+    +cover(fixed)
+    display: flex
+    align-items: center
+    transition: .3s $easeOutSine
+    background: $white
+
+    &:not(.show)
+        opacity: 0
+        pointer-events: none
+
+    .scroller
+        white-space: nowrap
+        overflow-x: scroll
+
+    figure
+        display: inline-block
+        width: 43%
+        position: relative
+        vertical-align: top
+
+        &:not(:last-child)
+            margin: 0 $pad 0 0
+
+        img
+            vertical-align: top
+
+    figcaption
+        position: absolute
+        top: $pad
+        left: 0
+        right: 0
+        text-align: center
+        font-weight: 700
+        font-size: 14px
+        line-height: 1
+        text-transform: uppercase
+        letter-spacing: tracking(75)

@@ -1,5 +1,6 @@
 import './components/Slideshow'
 import './components/PopupCard'
+import './layout/Menu'
 
 // ---------------------------------------------
 
