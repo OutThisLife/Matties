@@ -1,7 +1,10 @@
 import React, { PureComponent } from 'react'
 import { render } from 'react-dom'
+import PropTypes from 'prop-types'
 
 // -----------------------------------------------
+
+const $menu = document.getElementById('menu')
 
 class Menu extends PureComponent {
 	componentDidMount() {
@@ -25,5 +28,8 @@ class Menu extends PureComponent {
 	}
 }
 
-const $menu = document.getElementById('menu')
+Menu.propTypes = {
+	html: PropTypes.string.isRequired,
+}
+
 render(<Menu html={$menu.innerHTML} />, $menu)

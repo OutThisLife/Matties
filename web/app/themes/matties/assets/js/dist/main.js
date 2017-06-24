@@ -219,6 +219,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -228,6 +232,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 // -----------------------------------------------
+
+var $menu = document.getElementById('menu');
 
 var Menu = function (_PureComponent) {
 	_inherits(Menu, _PureComponent);
@@ -271,10 +277,13 @@ var Menu = function (_PureComponent) {
 	return Menu;
 }(_react.PureComponent);
 
-var $menu = document.getElementById('menu');
+Menu.propTypes = {
+	html: _propTypes2.default.string.isRequired
+};
+
 (0, _reactDom.render)(_react2.default.createElement(Menu, { html: $menu.innerHTML }), $menu);
 
-},{"react":189,"react-dom":37}],4:[function(require,module,exports){
+},{"prop-types":35,"react":189,"react-dom":37}],4:[function(require,module,exports){
 'use strict';
 
 require('./components/Slideshow');
