@@ -13,9 +13,9 @@ class Menu extends PureComponent {
 
 		this.el.addEventListener('mousewheel', e => {
 			if (e.deltaY < 0) {
-				$scroll.scrollLeft -= 100
+				$scroll.scrollLeft -= 50
 			} else if (e.deltaY > 0) {
-				$scroll.scrollLeft += 100
+				$scroll.scrollLeft += 50
 			}
 		})
 	}
