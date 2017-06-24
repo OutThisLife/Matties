@@ -1,9 +1,10 @@
 slideshow
     $dist: 110px
 
-    display: block
     z-index: 100
-    +cover(fixed)
+    display: block
+    position: relative
+    min-height: 100vh
 
     &:before, &:after,
     figure:after
@@ -23,6 +24,8 @@ slideshow
 
     figure
         +cover
+        background: center no-repeat
+        background-size: cover
 
         &:after
             right: 0
@@ -30,3 +33,18 @@ slideshow
             width: auto
             height: 242px
             background: linear-gradient(to bottom, rgba(#000, 0), rgba(#000, .25))
+
+    nav a
+        z-index: 5
+        position: absolute
+        top: 50%
+        width: 20px
+        height: 14.36px
+        transform: translate(0, -50%)
+
+        &:first-child
+            left: $pad
+            transform: scaleX(-1) translate(0, -50%)
+
+        &:last-child
+            right: $pad

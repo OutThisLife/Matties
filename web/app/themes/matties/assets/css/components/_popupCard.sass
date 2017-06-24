@@ -1,0 +1,27 @@
+.popup-card
+    +cover(fixed)
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $blue
+    transition: opacity .3s $easeOutSine
+    background: rgba(#000, .5)
+
+    &:not(.open)
+        opacity: 0
+        pointer-events: none
+
+    .inner
+        position: relative
+        min-width: 475px
+        text-align: center
+        padding: 50px 100px
+        background: $peach
+
+        .exit
+            position: absolute
+            top: $pad !important
+            right: $pad
+
+    h2
+        margin: 0 auto 50px

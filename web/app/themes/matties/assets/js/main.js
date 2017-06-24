@@ -1,3 +1,8 @@
+import './components/Slideshow'
+import './components/PopupCard'
+
+// ---------------------------------------------
+
 import AnimateOut from './modules/AnimateOut'
 
 Array.from(document.querySelectorAll('[href]')).forEach(el => {

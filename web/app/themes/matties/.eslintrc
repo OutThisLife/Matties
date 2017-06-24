@@ -39,6 +39,7 @@
 		"react/react-in-jsx-scope": "off",
 		"no-cond-assign": "off",
         "linebreak-style": "off",
+        "no-eval": "off",
         "react/prefer-stateless-function": [0, { "ignorePureComponents": true }]
 	},
 
