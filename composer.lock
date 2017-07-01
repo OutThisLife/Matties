@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "89586c9e14a2f437322ac3d6845807f8",
+    "content-hash": "a968fd38c2b1882b983696d3b91c9aac",
     "packages": [
         {
             "name": "composer/installers",
@@ -386,6 +386,226 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/admin-menu-editor",
+            "version": "1.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/admin-menu-editor/",
+                "reference": "tags/1.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/admin-menu-editor.1.8.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/admin-menu-editor/"
+        },
+        {
+            "name": "wpackagist-plugin/ajax-thumbnail-rebuild",
+            "version": "1.12",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ajax-thumbnail-rebuild/",
+                "reference": "tags/1.12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ajax-thumbnail-rebuild.1.12.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/ajax-thumbnail-rebuild/"
+        },
+        {
+            "name": "wpackagist-plugin/cimy-user-extra-fields",
+            "version": "2.7.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/cimy-user-extra-fields/",
+                "reference": "tags/2.7.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/cimy-user-extra-fields.2.7.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cimy-user-extra-fields/"
+        },
+        {
+            "name": "wpackagist-plugin/codepress-admin-columns",
+            "version": "3.0.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/codepress-admin-columns/",
+                "reference": "tags/3.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/codepress-admin-columns.3.0.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/codepress-admin-columns/"
+        },
+        {
+            "name": "wpackagist-plugin/custom-field-suite",
+            "version": "2.5.9",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/custom-field-suite/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-field-suite.zip?timestamp=1493255890",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/custom-field-suite/"
+        },
+        {
+            "name": "wpackagist-plugin/custom-post-type-ui",
+            "version": "1.5.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
+                "reference": "tags/1.5.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.5.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
+        },
+        {
+            "name": "wpackagist-plugin/intuitive-custom-post-order",
+            "version": "3.0.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/intuitive-custom-post-order/",
+                "reference": "tags/3.0.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/intuitive-custom-post-order.3.0.8.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/intuitive-custom-post-order/"
+        },
+        {
+            "name": "wpackagist-plugin/regenerate-thumbnails",
+            "version": "2.2.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails/",
+                "reference": "tags/2.2.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
+        },
+        {
+            "name": "wpackagist-plugin/shortcode-empty-paragraph-fix",
+            "version": "0.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/shortcode-empty-paragraph-fix/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/shortcode-empty-paragraph-fix.zip?timestamp=1496305219",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/shortcode-empty-paragraph-fix/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "4.9",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/4.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.9.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-dashboard-notes",
+            "version": "1.0.8.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-dashboard-notes/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-dashboard-notes.zip?timestamp=1483367485",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-dashboard-notes/"
         }
     ],
     "packages-dev": [
