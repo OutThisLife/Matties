@@ -25,7 +25,7 @@ slideshow
 
 	figure
 		+cover
-		transition: opacity .4s ease-in-out
+		transition: opacity 1.3s $easeOutSine
 		background: center no-repeat
 		background-size: cover
 
@@ -45,14 +45,16 @@ slideshow
 	nav a
 		z-index: 5
 		position: absolute
-		top: 50%
+		top: calc(50% - 8px - 23px)
 		width: 20px
 		height: 14.36px
 		transform: translate(0, -50%)
 
 		&:first-child
 			left: $pad
-			transform: scaleX(-1) translate(0, -50%)
+
+			svg
+				transform: scaleX(-1)
 
 		&:last-child
 			right: $pad

@@ -38,6 +38,8 @@
 	<?php endif ?>
 </footer>
 
+</div> <!-- End #container -->
+
 <?=BackEnd::getOption('extra-scripts')?>
 <?php wp_footer() ?>
 

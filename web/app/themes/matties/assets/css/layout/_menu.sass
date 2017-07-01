@@ -23,11 +23,14 @@
 		pointer-events: none
 
 	figure
+		opacity: 0
 		user-select: none
 		display: block
 		position: relative
 		vertical-align: top
 		padding: 15px
+		transition: none
+		transform-origin: center
 
 		@media (min-width: $small)
 			display: inline-block
@@ -42,30 +45,38 @@
 		img
 			vertical-align: top
 
+	&.show figure
+		opacity: 1
+		transition: 1s linear
+
+		@for $i from 0 to 5
+			&:nth-of-type(#{$i})
+				transition-delay: .15s * $i
+
 	figcaption
 		pointer-events: none
 		position: absolute
 		top: $pad
-		left: 0
 		right: 0
-		text-align: center
+		left: 0
+		color: $white
 		font-weight: 700
 		font-size: 14px
 		line-height: 1
+		text-align: center
 		text-transform: uppercase
 		letter-spacing: tracking(75)
-		color: $white
 
 	figure > a
 		@extend .full-bg
 		display: block
 		overflow: hidden
-		transition: .4s ease-in-out
+		transition: .4s $easeOutSine
 
 		img
 			visibility: hidden
 			transform-origin: center
-			transition: .4s ease-in-out
+			transition: .4s $easeOutSine
 
 		&:hover img
 			visibility: visible

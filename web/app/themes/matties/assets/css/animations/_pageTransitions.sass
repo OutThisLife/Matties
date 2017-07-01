@@ -1,0 +1,63 @@
+@import _keyframes
+
+*
+	transition: .4s $easeOutSine
+
+body
+	#container
+		opacity: 0.2
+		visibility: hidden
+
+	&.load-in #container
+		animation: fadeIn 1s $easeOutSine forwards
+
+	&.load-out
+		background: $blue !important
+
+		#container
+			opacity: 1
+			visibility: visible
+			animation: fadeOut .5s $easeOutSine forwards
+
+	// --
+
+	#header > *,
+	#footer-top a,
+	#footer-bottom,
+	#footer-page,
+	slideshow nav a
+		visibility: hidden
+		animation: fadeIn 1s 1s $easeOutSine forwards
+
+	#header > *
+		&:first-child
+			animation-name: slideFromLeft
+
+		&:last-child
+			animation-name: slideFromRight
+
+	#footer-bottom
+		animation-name: slideFromBottom
+
+	#footer-page
+		animation-name: fadeIn
+
+	slideshow nav a
+		&:first-child
+			animation-name: slideFromLeft
+
+		&:last-child
+			animation-name: slideFromRight
+
+// -----------------------------------------------
+
+.anim-el
+	visibility: hidden
+
+.animate-in > *
+	visibility: hidden
+	animation: slideFromTop .7s $easeOutSine forwards
+
+	@for $i from 0 to 25
+		&:nth-of-type(#{$i})
+			animation-delay: 1s + (.25s * $i)

@@ -11,7 +11,7 @@
 	</figure>
 
 	<figure>
-		<a href="/sample-page/" class="toggle-gallery" style="
+		<a href="javascript:;" class="toggle-gallery" style="
 			background-image: url(<?=assetDir?>/img/nav-menu.jpg);
 		">
 			<img src="<?=assetDir?>/img/nav-menu.jpg" alt="Menus" />

@@ -22,7 +22,7 @@ the_post();
 <section id="content" role="main">
 <div class="row wrapper">
 	<!-- Page -->
-	<div id="page" class="center-align" itemprop="MainContentOfPage">
+	<div id="page" class="center-align animate-in" itemprop="MainContentOfPage">
 		<h2><?php the_title() ?></h2>
 
 		<p>

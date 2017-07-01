@@ -25,10 +25,17 @@
 
 	svg
 		margin-top: 7px
-		fill: $blue
 
-		+bodyBg
-			fill: $white
+	svg path
+		fill: currentColor
+		stroke: transparent
+
+		.home &
+			fill: transparent
+			stroke: currentColor
+			stroke-dasharray: 1000
+			stroke-dashoffset: 1000
+			animation: dash 5s linear forwards
 
 	&.animate-out svg
 		opacity: 0

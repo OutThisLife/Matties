@@ -7,25 +7,29 @@ import './components/Gallery'
 import './components/PopupCard'
 import './components/Tabs'
 
-// ---------------------------------------------
+// -----------------------------------------------
 
-// import AnimateOut from './modules/AnimateOut'
+import AnimateOut from './modules/AnimateOut'
 
-// Array.from(document.querySelectorAll('[href]')).forEach(el => {
-// 	const href = el.getAttribute('href')
+Array.from(document.querySelectorAll('[href]')).forEach(el => {
+	const href = el.getAttribute('href')
 
-// 	if (
-// 		href.match(location.origin)
-// 		&& !/#/.test(href)
-// 	) {
-// 		el.addEventListener('click', (e) => {
-// 			e.preventDefault()
-// 			return AnimateOut(href)
-// 		})
-// 	}
-// })
+	if (
+		(
+			href.match(location.origin)
+			|| !/http/.test(href)
+		)
+		&& !/#/.test(href)
+		&& !/javascript/.test(href)
+	) el.addEventListener('click', (e) => {
+		e.preventDefault()
+		return AnimateOut(href)
+	})
+})
 
-// window.onload = () => document.body.classList.add('loaded')
+window.onload = () => document.body.classList.add('load-in')
+
+// -----------------------------------------------
 
 document.body.addEventListener('mousewheel', e => {
 	e.preventDefault()

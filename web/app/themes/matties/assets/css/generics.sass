@@ -5,13 +5,7 @@ html
 	letter-spacing: tracking(75)
 
 body
-	display: flex
-	min-height: 100vh
-	flex-direction: column
-	background: $white
-
-	#content
-		flex: 1
+	background: $blue
 
 	&.nohover
 		pointer-events: none !important
@@ -27,10 +21,15 @@ body
 	color: #FFF
 	background: $blue
 
-*
-	transition: .4s ease-in-out
-
 // -----------------------------------------------
+
+#container
+	display: flex
+	min-height: 100vh
+	flex-direction: column
+
+	#content
+		flex: 1
 
 .wrapper
 	+clearfix

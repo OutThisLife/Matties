@@ -39,6 +39,8 @@
 </head>
 <body <?php body_class() ?>>
 
+<div id="container">
+
 <!-- HEADER -->
 <header id="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 	<span class="popup-link">
