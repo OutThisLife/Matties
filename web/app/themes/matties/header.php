@@ -29,7 +29,12 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
 	<![endif]-->
 
+	<?=FrontEnd::typekit('bti8yhr')?>
+
+	<?php if (strstr($_SERVER['SERVER_NAME'], 'localhost')): ?>
 	<script src="//<?=$_SERVER['SERVER_NAME']?>:9091/livereload.js"></script>
+	<?php endif ?>
+
 	<?php wp_head() ?>
 </head>
 <body <?php body_class() ?>>
@@ -55,36 +60,8 @@
 	</a>
 </header>
 
-<nav id="menu">
-	<div class="scroller">
-		<figure>
-			<a href="javascript:;">
-				<img src="<?=assetDir?>/img/nav-menu.jpg" alt="Menus" />
-			</a>
+<!-- Menu -->
+<?php Template::partial('menu.php') ?>
 
-			<figcaption>
-				Menus
-			</figcaption>
-		</figure>
-
-		<figure>
-			<a href="javascript:;">
-				<img src="<?=assetDir?>/img/nav-menu.jpg" alt="Menus" />
-			</a>
-
-			<figcaption>
-				Menus
-			</figcaption>
-		</figure>
-
-		<figure>
-			<a href="javascript:;">
-				<img src="<?=assetDir?>/img/nav-menu.jpg" alt="Menus" />
-			</a>
-
-			<figcaption>
-				Menus
-			</figcaption>
-		</figure>
-	</div>
-</nav>
+<!-- Gallery -->
+<?php Template::partial('gallery.php') ?>

@@ -1,6 +1,11 @@
-import './components/Slideshow'
-import './components/PopupCard'
+import './layout/Header'
 import './layout/Menu'
+import './layout/Footer'
+
+import './components/Slideshow'
+import './components/Gallery'
+import './components/PopupCard'
+import './components/Tabs'
 
 // ---------------------------------------------
 

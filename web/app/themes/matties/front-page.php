@@ -13,9 +13,13 @@ get_header();
 
 <div class="slideshow">
 <noscript>
-{ "slides": [
-	"<?=assetDir?>/img/slide-1.jpg"
-]}
+{
+	"checkBrightness": true,
+	"slides": [
+		{ "img": "<?=assetDir?>/img/slide-1.jpg" },
+		{ "img": "<?=assetDir?>/img/slide-2.jpg" }
+	]
+}
 </noscript>
 </div>
 

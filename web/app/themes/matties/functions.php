@@ -28,15 +28,6 @@ require_once 'classes/sys/autoloader.php';
 ]])
 
 ->addSettings([[
-	# General settings tab
-	'General' => [
-		'phone' => [
-			'name' => 'Phone #',
-			'type' => 'text',
-			'desc' => 'Use [phone] to retrieve this value.',
-		],
-	],
-
 	# Footer settings tab
 	'Footer' => [
 		'scripts' => [

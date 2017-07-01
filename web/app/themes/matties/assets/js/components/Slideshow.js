@@ -1,52 +1,92 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { render } from 'react-dom'
 import PropTypes from 'prop-types'
+import ImageBrightness from '../modules/ImageBrightness'
 import Arrow from '../../img/arrow.svg'
 
 // ---------------------------------------------
 
-class Slideshow extends Component {
-	constructor(props) {
-		super(props)
-		this.state = { slide: 0 }
+class Slideshow extends PureComponent {
+	componentDidMount() {
+		this.curSlide = 0
+
+		this.$slides = this.$el.getElementsByTagName('figure')
+		this.max = this.$slides.length - 1
+
+		this.handleClick(0)
 	}
 
 	handleClick(i) {
-		let slide = i
-		const max = this.props.slides.length - 1
+		this.curSlide += i
 
-		if (slide > max) slide = 0
-		else if (slide < 0) slide = max
+		if (this.curSlide > this.max) this.curSlide = 0
+		else if (this.curSlide < 0) this.curSlide = this.max
 
-		return this.setState({ slide })
+		if (this.$el.querySelector('.active'))
+			this.$el.querySelector('.active').classList.remove('active')
+
+		const
+			$nextSlide = this.$slides[this.curSlide],
+			src = $nextSlide.style.backgroundImage.slice(4, -1).replace(/"/g, '')
+
+		$nextSlide.classList.add('active')
+
+		if (this.props.checkBrightness)
+			ImageBrightness(src, level => {
+				document.body.setAttribute('data-bg', level < 127.5 ? 'dark' : 'light')
+			})
 	}
 
 	render() {
-		return (<slideshow>
+		return (<slideshow ref={c => (this.$el = c)}>
 			<div className="the-slides">
 				{this.props.slides.map(slide => {
-					return (<figure key={Math.random()} style={{ backgroundImage: `url(${slide})` }} />)
+					return (<figure
+						key={Math.random()}
+						style={{ backgroundImage: `url(${slide.img})` }}
+					>
+						<img src={slide.img} alt="" />
+						<figcaption dangerouslySetInnerHTML={{ __html: slide.caption }} />
+					</figure>)
 				})}
 			</div>
 
 			<nav>
-				<a href="javascript:;" onClick={this.handleClick.bind(this, this.state.slide + 1)}>
+				<a href="javascript:;" onClick={this.handleClick.bind(this, -1)}>
 					<Arrow />
 				</a>
 
-				<a href="javascript:;" onClick={this.handleClick.bind(this, this.state.slide - 1)}>
+				<a href="javascript:;" onClick={this.handleClick.bind(this, 1)}>
 					<Arrow />
 				</a>
 			</nav>
+
+			<span dangerouslySetInnerHTML={{ __html: this.props.html }} />
 		</slideshow>)
 	}
 }
 
 Slideshow.propTypes = {
-	slides: PropTypes.arrayOf(PropTypes.string).isRequired,
+	checkBrightness: PropTypes.bool,
+	html: PropTypes.string,
+	slides: PropTypes.arrayOf(PropTypes.shape({
+		img: PropTypes.string.isRequired,
+		caption: PropTypes.string,
+	})).isRequired,
+}
+
+Slideshow.defaultProps = {
+	checkBrightness: false,
+	html: '',
+	slides: {
+		caption: '',
+	},
 }
 
 Array.from(document.getElementsByClassName('slideshow')).forEach($slideshow => {
 	const props = $slideshow.querySelector('noscript').innerText
-	render(<Slideshow {...JSON.parse(props)} />, $slideshow)
+	render(<Slideshow
+		{...JSON.parse(props)}
+		html={$slideshow.innerHTML.replace(props, '')}
+	/>, $slideshow)
 })

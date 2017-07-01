@@ -14,6 +14,7 @@ class Menu extends PureComponent {
 			$a.addEventListener('click', () => {
 				$menu.classList.toggle('show')
 				$a.classList.toggle('is-open')
+				document.querySelector('body').classList.toggle('lock')
 			})
 		})
 

@@ -1,50 +1,100 @@
 slideshow
-    $dist: 110px
+	$dist: 110px
 
-    z-index: 100
-    display: block
-    position: relative
-    min-height: 100vh
+	z-index: 100
+	display: block
+	position: relative
+	min-height: 100vh
+	background: #000
 
-    &:before, &:after,
-    figure:after
-        content: ''
-        z-index: 3
-        position: absolute
-        left: 0
-        top: 0
-        bottom: 0
-        width: 121px
-        background: linear-gradient(to left, rgba(#000, 0), rgba(#000, .25))
+	&:before, &:after,
+	figure:after
+		content: ''
+		z-index: 3
+		position: absolute
+		left: 0
+		top: 0
+		bottom: 0
+		width: 121px
+		background: linear-gradient(to left, rgba(#000, 0), rgba(#000, .25))
 
-    &:after
-        left: auto
-        right: 0
-        transform: scaleX(-1)
+	&:after
+		left: auto
+		right: 0
+		transform: scaleX(-1)
 
-    figure
-        +cover
-        background: center no-repeat
-        background-size: cover
+	figure
+		+cover
+		transition: opacity .4s ease-in-out
+		background: center no-repeat
+		background-size: cover
 
-        &:after
-            right: 0
-            top: auto
-            width: auto
-            height: 242px
-            background: linear-gradient(to bottom, rgba(#000, 0), rgba(#000, .25))
+		&:after
+			right: 0
+			top: auto
+			width: auto
+			height: 242px
+			background: linear-gradient(to bottom, rgba(#000, 0), rgba(#000, .25))
 
-    nav a
-        z-index: 5
-        position: absolute
-        top: 50%
-        width: 20px
-        height: 14.36px
-        transform: translate(0, -50%)
+		&:not(.active)
+			opacity: 0
 
-        &:first-child
-            left: $pad
-            transform: scaleX(-1) translate(0, -50%)
+		img
+			visibility: hidden
 
-        &:last-child
-            right: $pad
+	nav a
+		z-index: 5
+		position: absolute
+		top: 50%
+		width: 20px
+		height: 14.36px
+		transform: translate(0, -50%)
+
+		&:first-child
+			left: $pad
+			transform: scaleX(-1) translate(0, -50%)
+
+		&:last-child
+			right: $pad
+
+		+bodyBg
+			path
+				fill: white
+
+// -----------------------------------------------
+
+.slideshow.inline
+	slideshow
+		border: 10px solid white
+		min-height: 0
+		background: none
+
+		&:before, &:after
+			display: none
+
+	figure
+		+sq(auto)
+		text-align: center
+		background: transparent !important
+
+		&:before, &:after
+			display: none
+
+		img
+			visibility: visible
+			vertical-align: top
+
+	figcaption
+		+cover
+		top: auto
+		bottom: 15px
+		color: $white
+		font-size: 15px
+		text-align: center
+
+	#page & nav a
+		&:first-child
+			left: -$pad - 10
+
+		&:last-child
+			right: -$pad - 10

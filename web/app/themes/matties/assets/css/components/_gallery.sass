@@ -1,0 +1,38 @@
+#gallery
+	z-index: 600
+	+cover(fixed)
+
+	&:not(.open)
+		pointer-events: none
+		opacity: 0
+
+	> a.cover
+		z-index: 101
+
+		.exit
+			cursor: pointer
+			float: right
+			margin: 46px $pad 0 0
+			filter: brightness(0) invert(1)
+
+	slideshow
+		z-index: auto
+		position: fixed
+		+sq(100%)
+		border: 0
+		background: rgba(#000, .6)
+
+	nav a
+		z-index: 102
+
+	nav a path
+		fill: $white
+
+	figure
+		z-index: 102
+		top: 50%
+		right: auto
+		bottom: auto
+		left: 50%
+		border: 10px solid $white
+		transform: translate(-50%, -50%)

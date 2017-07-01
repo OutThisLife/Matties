@@ -1,0 +1,26 @@
+ul.tabs
+	margin: 23px 0 53px
+	padding: 0
+	text-align: center
+	height: auto
+	background: none
+
+	li
+		display: inline-block
+		list-style: none
+		text-transform: uppercase
+
+		&:not(:last-of-type)
+			margin-right: 70px
+
+		a
+			@extend %supText
+
+			&:not(:hover)
+				color: $default
+
+		&.active a
+			text-decoration: underline
+
+.tab-content:not(.active)
+	display: none

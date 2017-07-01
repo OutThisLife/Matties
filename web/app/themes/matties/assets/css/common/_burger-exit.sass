@@ -4,9 +4,10 @@
 	position: relative
 	vertical-align: middle
 	width: 24px
-	border: solid $blue
+	border: solid
 	border-width: 1.5px 0
 	padding: 5.5px 0
+	transition: none
 
 	&:before
 		content: ''
@@ -15,8 +16,8 @@
 		top: calc(50% - 1px)
 		left: 0
 		right: 0
-		height: 1.5px
-		background: $blue
+		height: 2px
+		background: currentColor
 
 	.is-open &
 		@extend .exit

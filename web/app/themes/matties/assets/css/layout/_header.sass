@@ -6,7 +6,7 @@
 	justify-content: space-between
 	+cover(fixed)
 	bottom: auto
-	padding: $pad
+	padding: 22px $pad
 	+transition(.35s ease-in-out)
 
 	@media (min-width: 767px)
@@ -16,13 +16,25 @@
 		position: absolute
 
 	a
-		display: inline-block
 		@extend %supText
+		display: inline-block
 		vertical-align: middle
 
+		+bodyBg
+			color: $white
+
 	svg
+		margin-top: 7px
 		fill: $blue
-		transition: .3s ease-in-out
+
+		+bodyBg
+			fill: $white
+
+	&.animate-out svg
+		opacity: 0
+
+		.lock &
+			opacity: 1
 
 	.toggle-menu
 		&.is-open

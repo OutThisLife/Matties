@@ -1,0 +1,64 @@
+.menu
+	color: $default
+	font-size: 11px
+
+	h3
+		width: 100%
+		margin-bottom: 10px
+
+	section:not(:last-child)
+		margin-bottom: 33px
+
+	@media (min-width: $small)
+		.two-col
+			display: flex
+			flex-wrap: wrap
+
+			.item
+				width: 50%
+
+// -----------------------------------------------
+
+.menu .item
+	padding: 0 16px 7px 28px
+
+	.item-row
+		+clearfix
+		background-image: linear-gradient(to right, black 33%, rgba(255,255,255,0) 0%)
+		background-position: bottom
+		background-size: 2px 1px
+		background-repeat: repeat-x
+
+		.price
+			float: right
+			font-size: 13px
+			padding-left: 5px
+
+		.price, .item-name
+			position: relative
+			top: 4px
+			background: $white
+
+		.item-name
+			display: inline-block
+			padding-right: 5px
+
+	.description
+		display: block
+		margin: 5px 0 0 0
+
+// -----------------------------------------------
+
+.disclaimer
+	display: block
+	margin: 70px auto 0
+
+	p
+		margin: 0 0 20px
+
+	strong
+		display: inherit
+		max-width: 60%
+		font-size: 8px
+		text-transform: uppercase
+		margin: auto

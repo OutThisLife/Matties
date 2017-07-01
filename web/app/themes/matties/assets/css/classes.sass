@@ -623,3 +623,9 @@ nav
 
 .invisible
 	visibility: hidden
+
+// -----------------------------------------------
+
+=bodyBg($shade: 'dark')
+	[data-bg=#{$shade}]:not(.lock) &
+		@content

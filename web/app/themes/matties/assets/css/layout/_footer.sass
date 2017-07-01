@@ -1,17 +1,37 @@
 #footer
 	z-index: 100
-	+cover(fixed)
-	top: auto
+
+	.lock &
+		z-index: 500
+
+	.lock &, .home &
+		+cover(fixed)
+		top: auto
+
+	> [id]
+		transition: .4s ease-in-out
+
+	&.close > [id]
+		transform: translate(0, 47px)
+
+// -----------------------------------------------
 
 #footer-top
 	display: flex
 	align-items: center
 	justify-content: space-between
-	padding: $pad
+	padding: 28px $pad
+
+	body:not(.home):not(.lock) &
+		display: none
 
 	a
 		@extend %supText
 		color: $white
+		letter-spacing: tracking(80)
+
+		.lock &
+			color: $blue
 
 #footer-bottom
 	display: flex
@@ -19,8 +39,11 @@
 	justify-content: center
 	align-items: center
 	text-align: center
-	padding: $pad / 2 $pad
+	padding: 14px $pad
 	background: $peach
+
+	body:not(.home) &
+		display: none
 
 	p
 		color: $blue
@@ -29,8 +52,58 @@
 		margin: 0
 
 	a
-		margin-left: 50px
+		text-decoration: none
+
+		@media (min-width: $medium)
+			margin-left: 50px
+			text-decoration: underline
 
 	.exit
 		position: absolute
 		right: $pad
+
+// -----------------------------------------------
+
+#footer-page
+	display: flex
+	color: #FFF
+	text-transform: uppercase
+	padding: $pad * 2 100px
+	background: $blue
+
+	.lock &
+		display: none
+
+	*
+		display: inline-block
+		margin: auto
+		padding: 0
+		vertical-align: middle
+
+	ul
+		display: flex
+		align-items: center
+		width: 100%
+
+		@media (min-width: $small)
+			align-content: space-between
+
+		@media (max-width: $small)
+			flex-wrap: wrap
+			justify-content: center
+			text-align: center
+
+			li
+				width: 100%
+				padding: 10px 0
+
+	a
+		color: inherit
+		font-weight: 700
+		font-size: 12px
+
+		&:hover
+			text-decoration: underline
+
+	img
+		filter: brightness(0) invert(1)
