@@ -4,7 +4,7 @@
 	position: relative
 	vertical-align: middle
 	width: 24px
-	border: solid
+	border: solid $blue
 	border-width: 1.5px 0
 	padding: 5.5px 0
 	transition: none
@@ -17,7 +17,7 @@
 		left: 0
 		right: 0
 		height: 2px
-		background: currentColor
+		background: $blue
 
 	.is-open &
 		@extend .exit
@@ -25,6 +25,9 @@
 
 		&:before
 			visibility: hidden
+
+		+bodyBg
+			filter: brightness(0) invert(1)
 
 // -----------------------------------------------
 

@@ -26,7 +26,7 @@
 
 	<?php if (!is_front_page()): ?>
 	<div id="footer-page" itemscope itemtype="http://schema.org/WPFooter">
-		<?=BackEnd::getMenu('footer')?>
+		<ul><?=BackEnd::getMenu('footer')?></ul>
 	</div>
 	<?php endif ?>
 </footer>

@@ -10,6 +10,7 @@ class Slideshow extends PureComponent {
 	componentDidMount() {
 		this.curSlide = 0
 
+		this.$placeholder = this.$el.querySelector('.placeholder-img')
 		this.$slides = this.$el.getElementsByTagName('figure')
 		this.max = this.$slides.length - 1
 
@@ -27,13 +28,18 @@ class Slideshow extends PureComponent {
 
 		const
 			$nextSlide = this.$slides[this.curSlide],
+			$img = $nextSlide.querySelector('img'),
 			src = $nextSlide.style.backgroundImage.slice(4, -1).replace(/"/g, '')
 
 		$nextSlide.classList.add('active')
 
+		if (this.$placeholder)
+			this.$placeholder.src = $img.src
+
 		if (this.props.checkBrightness)
 			ImageBrightness(src, level => {
-				document.body.setAttribute('data-bg', level < 127.5 ? 'dark' : 'light')
+				const el = this.$placeholder ? this.$el : document.body
+				el.setAttribute('data-bg', level < 127.5 ? 'dark' : 'light')
 			})
 	}
 

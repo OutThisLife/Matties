@@ -3,7 +3,17 @@
 *
 	transition: .4s $easeOutSine
 
+// -----------------------------------------------
+
 body
+	&:after
+		opacity: 0
+		pointer-events: none
+		content: ''
+		+cover(fixed)
+		background: url(../../img/logo.svg) center no-repeat
+		background-size: 105px auto
+
 	#container
 		opacity: 0.2
 		visibility: hidden
@@ -12,12 +22,13 @@ body
 		animation: fadeIn 1s $easeOutSine forwards
 
 	&.load-out
-		background: $blue !important
+		&:after
+			animation: fadeInOut 2s $easeOutSine forwards
 
 		#container
 			opacity: 1
 			visibility: visible
-			animation: fadeOut .5s $easeOutSine forwards
+			animation: fadeOut .2s $easeOutSine forwards
 
 	// --
 
@@ -25,7 +36,9 @@ body
 	#footer-top a,
 	#footer-bottom,
 	#footer-page,
-	slideshow nav a
+	slideshow nav a,
+	#page .slideshow.inline,
+	#page .slideshow.inline figure img
 		visibility: hidden
 		animation: fadeIn 1s 1s $easeOutSine forwards
 
@@ -54,7 +67,7 @@ body
 .anim-el
 	visibility: hidden
 
-.animate-in > *
+.animate-in > *:not(.slideshow)
 	visibility: hidden
 	animation: slideFromTop .7s $easeOutSine forwards
 

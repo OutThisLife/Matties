@@ -6,6 +6,8 @@ var $gallery = document.getElementById('gallery');
 Array.from(document.getElementsByClassName('toggle-gallery')).forEach(function ($a) {
 	$a.addEventListener('click', function (e) {
 		e.preventDefault();
+		e.stopPropagation();
+
 		$gallery.classList.toggle('open');
 	});
 });
@@ -173,6 +175,7 @@ var Slideshow = function (_PureComponent) {
 		value: function componentDidMount() {
 			this.curSlide = 0;
 
+			this.$placeholder = this.$el.querySelector('.placeholder-img');
 			this.$slides = this.$el.getElementsByTagName('figure');
 			this.max = this.$slides.length - 1;
 
@@ -181,6 +184,8 @@ var Slideshow = function (_PureComponent) {
 	}, {
 		key: 'handleClick',
 		value: function handleClick(i) {
+			var _this2 = this;
+
 			this.curSlide += i;
 
 			if (this.curSlide > this.max) this.curSlide = 0;else if (this.curSlide < 0) this.curSlide = this.max;
@@ -188,23 +193,27 @@ var Slideshow = function (_PureComponent) {
 			if (this.$el.querySelector('.active')) this.$el.querySelector('.active').classList.remove('active');
 
 			var $nextSlide = this.$slides[this.curSlide],
+			    $img = $nextSlide.querySelector('img'),
 			    src = $nextSlide.style.backgroundImage.slice(4, -1).replace(/"/g, '');
 
 			$nextSlide.classList.add('active');
 
+			if (this.$placeholder) this.$placeholder.src = $img.src;
+
 			if (this.props.checkBrightness) (0, _ImageBrightness2.default)(src, function (level) {
-				document.body.setAttribute('data-bg', level < 127.5 ? 'dark' : 'light');
+				var el = _this2.$placeholder ? _this2.$el : document.body;
+				el.setAttribute('data-bg', level < 127.5 ? 'dark' : 'light');
 			});
 		}
 	}, {
 		key: 'render',
 		value: function render() {
-			var _this2 = this;
+			var _this3 = this;
 
 			return _react2.default.createElement(
 				'slideshow',
 				{ ref: function ref(c) {
-						return _this2.$el = c;
+						return _this3.$el = c;
 					} },
 				_react2.default.createElement(
 					'div',

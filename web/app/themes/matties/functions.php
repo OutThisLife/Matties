@@ -14,7 +14,7 @@ require_once 'classes/sys/autoloader.php';
  * Set up the front-end
  */
 ->addImageSizes([[
-	//
+	'menu' => [465, 308],
 ]])
 
 // -----------------------------------------------
@@ -72,7 +72,7 @@ require_once 'classes/sys/autoloader.php';
 	# [slideshow]
 	'slideshow' => function($args) {
 		ob_start();
-		include locate_template('partials/slideshow-inline.php');
+		include locate_template('partials/shortcodes/slideshow.php');
 		return ob_get_clean();
 	},
 ]])
@@ -109,3 +109,21 @@ add_filter('upload_mimes', function($mimes) {
 
 	return $mimes;
 });
+
+add_filter('wp_get_attachment_url', function($url) {
+	return str_replace('localhost:8000', 'mattiesaustin.com/dev', $url);
+});
+
+// -----------------------------------------------
+
+function parseSlides($slides, $size = 'full', $options = []) {
+	$data = array_merge($options, ['slides' => []]);
+
+	foreach ($slides AS $slide)
+		$data['slides'][] = [
+			'caption' => $slide['title'],
+			'img' => FrontEnd::getSrc($slide['image'], $size),
+		];
+
+	return json_encode($data);
+}

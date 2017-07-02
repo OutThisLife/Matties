@@ -41,4 +41,4 @@ DEFINE('tFormat', 'M d, Y');
 
 # Various page IDs
 DEFINE('HOME', get_home_url());
-// DEFINE('BLOG', xyz);
+DEFINE('GALLERY', 21);

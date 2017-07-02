@@ -73,6 +73,13 @@
 	100%
 		opacity: 0
 
+@keyframes fadeInOut
+	0%, 100%
+		opacity: 0
+
+	50%
+		opacity: 1
+
 @keyframes loadingSprite
 	100%
 		background-position: center 100%
@@ -91,3 +98,15 @@
 	100%
 		stroke: transparent
 		fill: currentColor
+
+@keyframes pageOverlay
+	0%
+		visibility: visible
+		transform: translate3d(0, 100%, 0)
+
+	50%, 70%
+		opacity: 1
+		transform: translate3d(0, 0, 0)
+
+	100%
+		opacity: 0

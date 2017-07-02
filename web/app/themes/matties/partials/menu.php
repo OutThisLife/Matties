@@ -1,33 +1,18 @@
+<?php
+/**
+ * matties
+ *
+ * Popup menu
+ */
+?>
+
 <nav id="menu">
 <div class="scroller">
-	<figure>
-		<a href="/sample-page/" style="
-			background-image: url(<?=assetDir?>/img/nav-menu.jpg);
-		">
-			<img src="<?=assetDir?>/img/nav-menu.jpg" alt="Menus" />
-		</a>
-
-		<figcaption>Menus</figcaption>
-	</figure>
-
-	<figure>
-		<a href="javascript:;" class="toggle-gallery" style="
-			background-image: url(<?=assetDir?>/img/nav-menu.jpg);
-		">
-			<img src="<?=assetDir?>/img/nav-menu.jpg" alt="Menus" />
-		</a>
-
-		<figcaption>Gallery</figcaption>
-	</figure>
-
-	<figure>
-		<a href="/sample-page/" style="
-			background-image: url(<?=assetDir?>/img/nav-menu.jpg);
-		">
-			<img src="<?=assetDir?>/img/nav-menu.jpg" alt="Menus" />
-		</a>
-
-		<figcaption>Menus</figcaption>
-	</figure>
+<?php
+Template::loop('menuItem', [
+	'post_type' => 'page',
+	'post__not_in' => [2],
+])
+?>
 </div>
 </nav>

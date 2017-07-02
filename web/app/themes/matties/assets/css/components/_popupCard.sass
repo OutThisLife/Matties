@@ -1,30 +1,30 @@
 .popup-card
-    +cover(fixed)
-    display: flex
-    align-items: center
-    justify-content: center
-    color: $blue
-    transition: opacity .3s $easeOutSine
-    background: rgba(#000, .5)
+	z-index: 700
+	+cover(fixed)
+	display: flex
+	align-items: center
+	justify-content: center
+	color: $blue
+	transition: none
+	background: rgba(#000, .5)
 
-    &:not(.open)
-        opacity: 0
-        pointer-events: none
+	&:not(.open)
+		opacity: 0
+		pointer-events: none
 
-    a.cover
-        text-indent: -9999em
+	a.cover
+		text-indent: -9999em
 
-    .inner
-        position: relative
-        min-width: 475px
-        text-align: center
-        padding: 50px 100px
-        background: $peach
+	.inner
+		position: relative
+		min-width: 475px
+		text-align: center
+		padding: 50px 100px
+		background: $peach
 
-        .exit
-            position: absolute
-            top: $pad !important
-            right: $pad
-
-    h2
-        margin: 0 auto 50px
+		.exit
+			position: absolute
+			top: $pad !important
+			right: $pad
+	h2
+		margin: 0 auto 50px

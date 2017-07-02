@@ -7,13 +7,17 @@
 		opacity: 0
 
 	> a.cover
-		z-index: 101
+		z-index: 1
+		pointer-events: none
 
 		.exit
 			cursor: pointer
 			float: right
 			margin: 46px $pad 0 0
 			filter: brightness(0) invert(1)
+
+	&.open .exit
+		pointer-events: auto
 
 	slideshow
 		z-index: auto

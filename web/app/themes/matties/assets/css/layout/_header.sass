@@ -15,6 +15,13 @@
 	@media (max-width: 767px)
 		position: absolute
 
+		.popup-link
+			pointer-events: none
+			filter: opacity(0)
+
+		.toggle-menu
+			color: transparent
+
 	a
 		@extend %supText
 		display: inline-block
@@ -26,22 +33,25 @@
 	svg
 		margin-top: 7px
 
-	svg path
-		fill: currentColor
-		stroke: transparent
-
-		.home &
+		path
 			fill: transparent
 			stroke: currentColor
 			stroke-dasharray: 1000
 			stroke-dashoffset: 1000
-			animation: dash 5s linear forwards
+			animation: dash 0s $easeOutCubic forwards
 
-	&.animate-out svg
-		opacity: 0
+			.home &
+				animation-duration: 5s
 
-		.lock &
-			opacity: 1
+		&:hover path
+			animation: dash 5s $easeOutCubic infinite
+
+	@media (min-width: $small)
+		&.animate-out svg
+			opacity: 0
+
+			.lock &
+				opacity: 1
 
 	.toggle-menu
 		&.is-open

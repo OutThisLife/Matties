@@ -24,6 +24,9 @@
 	justify-content: space-between
 	padding: 28px $pad
 
+	@media (max-width: $small)
+		display: none
+
 	body:not(.home):not(.lock) &
 		display: none
 
@@ -86,7 +89,7 @@
 		display: block
 		width: 100%
 
-	.menu ul
+	ul
 		display: flex
 		align-items: center
 		width: 100%
