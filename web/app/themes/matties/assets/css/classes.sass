@@ -627,6 +627,9 @@ nav
 // -----------------------------------------------
 
 =bodyBg($shade: 'dark')
-	[data-bg=#{$shade}]:not(.lock) &,
-	.lock &
+	[data-bg=#{$shade}]:not(.lock) &
 		@content
+
+	@media (max-width: $small)
+		.lock &
+			@content

@@ -21,6 +21,7 @@ Array.from(document.querySelectorAll('[href]')).forEach(el => {
 		)
 		&& !/#/.test(href)
 		&& !/javascript/.test(href)
+		&& !el.classList.contains('toggle-gallery')
 	) el.addEventListener('click', (e) => {
 		e.preventDefault()
 		return AnimateOut(href)
