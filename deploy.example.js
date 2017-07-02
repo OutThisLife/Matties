@@ -3,18 +3,18 @@ const
 	deploy = new ftpd(),
 
 	config = {
-		username: 'domain',
-		password: 'password',
-		host: 'domain.com',
+		username: 'example',
+		password: '-_-_-_-_-_-',
+		host: 'example.com',
 		port: 21,
 		localRoot: __dirname,
 		remoteRoot: '/public_html/dev/',
-		exclude: ['node_modules/', 'vendor/', '.git', 'yarn.lock'],
+		exclude: ['node_modules/*', 'vendor/*', '.git', 'yarn.lock'],
 	}
 
-deploy.deploy(config, err => {
-	if (err) throw err
-	console.log('Finished!')
-})
+deploy.on('uploading', data => console.log(data.filename, data.percentComplete))
 
-deploy.on('uploaded', data => console.log(data . "\n"))
+deploy.deploy(config, err => {
+	if (err) console.log(err)
+	else console.log('Finished!')
+})
