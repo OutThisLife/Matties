@@ -38,15 +38,7 @@
 	<?php wp_head() ?>
 
 	<style>
-	body {
-		<?php if (class_exists('CFS') && ($bg = CFS()->get('body_bg'))): ?>
-		background: <?=$bg ?: '#ecebe2'?>;
-
-		<?php else: ?>
-		background: #ecebe2;
-
-		<?php endif ?>
-	}
+	body { background: <?=CFS()->get('body_bg') ?: '#ecebe2'?>; }
 	</style>
 </head>
 <body <?php body_class() ?>>

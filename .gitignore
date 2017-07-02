@@ -14,6 +14,7 @@ web/.htaccess
 .env
 .env.*
 !.env.example
+dploy.yaml
 
 # Composer
 vendor/*

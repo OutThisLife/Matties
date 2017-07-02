@@ -86,22 +86,27 @@ ol
 ul
 	padding-left: 25px
 
-	li
-		list-style-type: disc
-
 a
 	color: $blue
 	font-size: inherit
 	line-height: inherit
 
-p a
+p a,
+li a
 	text-decoration: none
 	transition: none
 	background: linear-gradient(to bottom, rgba($blue, .4) 50%, rgba($blue, .4) 50%) 0 102% repeat-x
 	background-size: 1px 1px
 
 	&:hover
+		text-decoration: none !important
 		background-image: linear-gradient(to bottom, $blue 50%, $blue 50%)
+
+	#footer-page &
+		background-image: linear-gradient(to bottom, rgba($white, .4) 50%, rgba($white, .4) 50%)
+
+		&:hover
+			background-image: linear-gradient(to bottom, $white 50%, $white 50%)
 
 	@media (max-width: $small)
 		background-position: 0 100%

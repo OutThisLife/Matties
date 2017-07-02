@@ -68,6 +68,13 @@ require_once 'classes/sys/autoloader.php';
 	'youtube' => function($args, $content) {
 		return '<div class="responsive-video"><iframe width="560" height="315" src="https://www.youtube.com/embed/'. $args['id'] .'" frameborder="0" allowfullscreen></iframe></div>';
 	},
+
+	# [slideshow]
+	'slideshow' => function($args) {
+		ob_start();
+		include locate_template('partials/slideshow-inline.php');
+		return ob_get_clean();
+	},
 ]])
 
 // -----------------------------------------------

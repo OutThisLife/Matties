@@ -13,7 +13,7 @@ get_header();
 
 <!-- CONTENT -->
 <section id="content" role="main">
-<div class="row wrapper">
+<div id="page" class="center-align row wrapper">
 	<h2>Sorry, that page could not be found.</h2>
 
 	<p>
