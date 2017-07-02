@@ -7,11 +7,7 @@ export default function (href) {
 	document.body.classList.add('load-out')
 
 	;['animationend', 'webkitAnimationEnd'].map(evt => {
-		$container.addEventListener(evt, (e) => {
-			location.href = href
-			$container.removeEventListener(e.type, arguments.callee) // eslint-disable-line
-		})
-
+		$container.addEventListener(evt, () => (location.href = href))
 		return evt
 	})
 }

@@ -37,6 +37,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.5.4",
     "rx": "^4.1.0",
+    "uglifyjs": "^2.4.11",
     "ws": "^3.0.0"
   },
   "devDependencies": {
@@ -50,15 +51,15 @@
     "eslint-plugin-react": "^6",
     "livereload": "^0.6.2",
     "parallelshell": "^3.0.1",
-    "uglifyify": "^4.0.1",
+    "uglifyify": "^4.0.2",
     "watch": "^1",
     "watchify": "^3"
   },
   "scripts": {
     "test": "eslint .",
     "dev": "parallelshell \"yarn livereload\" \"yarn watch:css\" \"yarn watch:js\"",
-    "js": "browserify -t babelify -t uglifyify assets/js/main.js -o assets/js/dist/main.js",
-    "watch:js": "watchify assets/js/main.js -t babelify -t uglifyify -o assets/js/dist/main.js -v",
+    "js": "browserify -t babelify assets/js/main.js | uglifyjs > assets/js/dist/main.js",
+    "watch:js": "watchify -t babelify assets/js/main.js -o assets/js/dist/main.js -v -d",
     "css": "node-sass --include-path css --output-style compressed assets/css/main.sass assets/css/dist/main.css",
     "watch:css": "node-sass --include-path css --output-style compressed assets/css/main.sass assets/css/dist/main.css --w",
     "livereload": "livereload . -p 9091 -d"

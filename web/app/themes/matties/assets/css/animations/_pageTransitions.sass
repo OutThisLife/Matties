@@ -11,7 +11,7 @@ body
 		pointer-events: none
 		content: ''
 		+cover(fixed)
-		background: url(../../img/logo.svg) center no-repeat
+		background: $white url(../../img/logo.svg) center no-repeat
 		background-size: 105px auto
 
 	#container
@@ -20,6 +20,9 @@ body
 
 	&.load-in #container
 		animation: fadeIn 1s $easeOutSine forwards
+
+	&:not(.loaded)
+		background: $white !important
 
 	&.load-out
 		&:after
