@@ -24,7 +24,7 @@
  "homepage": "https://github.com/OutThisLife/Matties#readme",
  "dependencies": {
   "concurrently": "^3.4.0",
-  "dploy": "^1.2.0"
+  "ftp-deploy": "^1.2.2"
  },
  "devDependencies": {
   "parallelshell": "^3.0.1"

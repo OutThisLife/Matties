@@ -1,7 +1,0 @@
-dev:
-    host: "domain.com"
-    user: "domain"
-    pass: "-_-_-"
-    path:
-        local: "web/"
-        remote: "public_html/dev"
