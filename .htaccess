@@ -1,13 +1,10 @@
 RewriteEngine on
 
-RewriteCond %{HTTP_HOST} ^(www.)?mattiesaustin.com$
+RewriteCond %{HTTP_HOST} ^mattiesaustin.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.mattiesaustin.com$
+RewriteCond %{REQUEST_URI} !web/
 
-RewriteCond %{REQUEST_URI} !^/public/
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /public/$1
-RewriteCond %{HTTP_HOST} ^(www.)?mattiesaustin.com$
-RewriteRule ^(/)?$ public/index.php [L]
+RewriteRule (.*) web/$1 [L]
 
 <Files ~ ".env">
 Deny from all

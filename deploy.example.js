@@ -9,7 +9,7 @@ const
 		port: 21,
 		localRoot: __dirname,
 		remoteRoot: '/public_html/dev/',
-		exclude: ['node_modules/*', 'vendor/*', '.git', 'yarn.lock'],
+		exclude: ['node_modules/*', '.git', 'yarn.lock', "deploy.js", "sftp-config.json", "web/app/themes/matties/node_modules/*"],
 	}
 
 deploy.on('uploading', data => console.log(data.filename, data.percentComplete))
