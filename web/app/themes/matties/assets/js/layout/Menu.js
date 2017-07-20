@@ -18,14 +18,13 @@ class Menu extends PureComponent {
 			})
 		})
 
-		if (!/mac/.test(navigator.platform.toLowerCase()))
-			this.el.addEventListener('mousewheel', e => {
-				if (e.deltaY < 0) {
-					$scroll.scrollLeft -= 50
-				} else if (e.deltaY > 0) {
-					$scroll.scrollLeft += 50
-				}
-			})
+		this.el.addEventListener('mousewheel', e => {
+			if (e.deltaY < 0) {
+				$scroll.scrollLeft -= 50
+			} else if (e.deltaY > 0) {
+				$scroll.scrollLeft += 50
+			}
+		})
 	}
 
 	render() {
