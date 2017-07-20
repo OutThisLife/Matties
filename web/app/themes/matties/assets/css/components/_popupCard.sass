@@ -1,12 +1,9 @@
 .popup-card
 	z-index: 700
 	+cover(fixed)
-	display: flex
-	align-items: center
-	justify-content: center
 	color: $blue
-	transition: none
 	background: rgba(#000, .5)
+	animation: 0.4s ease-in-out fadeIn 1
 
 	&:not(.open)
 		opacity: 0
@@ -21,6 +18,10 @@
 		text-align: center
 		padding: 50px 100px
 		background: $peach
+		position: absolute
+		left: 50%
+		top: 50%
+		+transform(translate(-50%, -50%))
 
 		.exit
 			position: absolute
