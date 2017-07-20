@@ -35,15 +35,3 @@ window.onload = () => {
 		return evt
 	})
 }
-
-// -----------------------------------------------
-
-document.body.addEventListener('mousewheel', e => {
-	e.preventDefault()
-
-	if (e.deltaY < 0) {
-		document.body.scrollTop -= 50
-	} else if (e.deltaY > 0) {
-		document.body.scrollTop += 50
-	}
-})

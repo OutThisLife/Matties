@@ -9,7 +9,8 @@
 		"hbspt": true,
 		"YT": true,
 		"history": true,
-		"Typekit": true
+		"Typekit": true,
+		"navigator": true
 	},
 
 	"plugins": [
