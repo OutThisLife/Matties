@@ -8,3 +8,5 @@ Array.from(document.getElementsByClassName('toggle-gallery')).forEach($a => {
 		$gallery.classList.toggle('open')
 	})
 })
+
+$gallery.addEventListener('click', () => $gallery.classList.toggle('open'))
