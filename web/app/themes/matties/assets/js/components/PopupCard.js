@@ -5,8 +5,18 @@ import PropTypes from 'prop-types'
 // ---------------------------------------------
 
 class PopupCard extends PureComponent {
+	componentDidMount() {
+		const $scripts = this.$card.getElementsByTagName('script')
+
+		Array.from($scripts).forEach($script => {
+			const s = document.createElement('script')
+			s.src = $script.src
+			this.$card.querySelector('.inner div').appendChild(s)
+			$script.parentNode.removeChild($script)
+		})
+	}
+
 	handleClick() {
-		console.log('WHY')
 		this.$card.classList.toggle('open')
 	}
 

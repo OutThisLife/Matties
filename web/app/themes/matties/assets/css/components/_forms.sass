@@ -14,7 +14,8 @@ form
 		[type=submit]
 			background: #CCC
 
-	label
+	label,
+	#ot-reservation-widget & [class*="label"]
 		color: $blue
 		font: 14px/1 $font
 		letter-spacing: tracking(75)
@@ -104,6 +105,7 @@ form
 		+clearfix
 
 	.gfield_label
+		display: none
 		font-weight: 700
 
 	ul li
@@ -163,6 +165,8 @@ form
 // -----------------------------------------------
 
 #rc-portal
+	margin: auto
+
 	fieldset
 		border: 0
 		margin: 0
@@ -196,3 +200,56 @@ form
 		width: calc(100% + 50000px)
 		text-align: center
 		margin: 25px auto 0
+
+// -----------------------------------------------
+
+#ot-reservation-widget
+	.ot-title,
+	.ot-powered-by
+		display: none
+
+	.ot-dtp-picker,
+	.ot-dtp-picker-form,
+	.ot-dtp-picker-selector
+		width: auto
+		border: 0
+		background: none
+
+	.ot-dtp-picker-button
+		box-shadow: none
+
+	.ot-dtp-picker-selector-link:after
+		color: $blue
+
+	.picker
+		width: 256px
+		height: 380px
+
+		.picker__holder
+			left: 0
+			width: inherit
+			box-shadow: none
+			background: none
+
+		.picker__frame
+			top: 0
+			left: 0
+
+		.picker__header
+			margin: 10px auto 20px
+
+		.picker__nav--next,
+		.picker__nav--prev
+			padding: 0
+
+			&:before
+				color: transparent
+
+		td, th
+			font: 14px/1 $font
+			padding: 0
+
+			div
+				font: inherit
+				line-height: 1
+				padding: 4px 0

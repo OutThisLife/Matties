@@ -52,7 +52,7 @@
 		{
 			"cta": "Reserve",
 			"title": "Reservations",
-			"html": "<div id=rc-portal token=5Nu3UzDWlONY5jj9cB5SjJmRvHoZhxuyN9zuOvXnND78ytvhGW5h7q8JzquuKpkF><img src=https://www.reservecloud.com/images/loading.gif></div>"
+			"html": "<script src='//www.opentable.com/widget/reservation/loader?rid=269488&domain=com&type=standard&theme=standard&lang=en&overlay=false&iframe=false'></script>"
 		}
 		</noscript>
 	</span>

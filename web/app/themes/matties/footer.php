@@ -37,7 +37,6 @@
 <?php wp_footer() ?>
 
 <script src="<?=assetDir?>/js/dist/main.js?v=<?=ASSET_VERSION?>"></script>
-<script id="rc-script" src="https://www.reservecloud.com/scripts/portals/rcPortal.js" rc-target="eventLeads" defer></script>
 
 </body>
 </html>
