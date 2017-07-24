@@ -5,7 +5,8 @@
  "main": "index.js",
  "scripts": {
   "dev": "parallelshell \"composer dev\" \"cd web/app/themes/matties/ && yarn && yarn dev\"",
-  "deploy:ftp": "node deploy"
+  "deploy:ftp": "node deploy",
+  "wkill": "taskkill /f /im node.exe"
  },
  "repository": {
   "type": "git",

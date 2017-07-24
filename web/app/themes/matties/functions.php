@@ -91,10 +91,7 @@ add_action('wp_enqueue_scripts', function() {
 
 	wp_deregister_script('wp-embed.min.js');
 	wp_deregister_script('wp-embed');
-	wp_deregister_script('jquery-migrate');
 	wp_deregister_script('embed');
-	wp_deregister_script('jquery');
-	wp_deregister_script('jquery-easing');
 
 	wp_dequeue_style('page-list-style');
 	wp_dequeue_style('yoast-seo-adminbar');

@@ -57,11 +57,11 @@
   },
   "scripts": {
     "test": "eslint .",
-    "dev": "parallelshell \"yarn livereload\" \"yarn watch:css\" \"yarn watch:js\"",
+    "dev": "parallelshell \"yarn watch:sass\" \"yarn watch:js\" \"yarn livereload\"",
     "js": "browserify -t babelify assets/js/main.js | uglifyjs > assets/js/dist/main.js",
     "watch:js": "watchify -t babelify assets/js/main.js -o assets/js/dist/main.js -v -d",
-    "css": "node-sass --include-path css --output-style compressed assets/css/main.sass assets/css/dist/main.css",
-    "watch:css": "node-sass --include-path css --output-style compressed assets/css/main.sass assets/css/dist/main.css --w",
+    "sass": "node-sass --include-path css --output-style compressed assets/css/main.sass assets/css/dist/main.css",
+    "watch:sass": "yarn sass && yarn sass -- --w",
     "livereload": "livereload . -p 9091 -d"
   }
 }

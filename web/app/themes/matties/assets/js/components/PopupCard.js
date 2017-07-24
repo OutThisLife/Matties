@@ -1,17 +1,13 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { render } from 'react-dom'
 import PropTypes from 'prop-types'
 
 // ---------------------------------------------
 
-class PopupCard extends Component {
-	constructor(props) {
-		super(props)
-		this.state = { open: false }
-	}
-
+class PopupCard extends PureComponent {
 	handleClick() {
-		this.setState({ open: !this.state.open })
+		console.log('WHY')
+		this.$card.classList.toggle('open')
 	}
 
 	render() {
@@ -22,7 +18,7 @@ class PopupCard extends Component {
 				dangerouslySetInnerHTML={{ __html: this.props.cta }}
 			/>
 
-			<div className={`popup-card ${this.state.open ? 'open' : ''}`}>
+			<div className="popup-card" ref={c => (this.$card = c)}>
 				<a href="javascript:;" className="cover" onClick={this.handleClick.bind(this)}>
 					Exit
 				</a>

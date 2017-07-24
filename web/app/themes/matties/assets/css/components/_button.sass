@@ -1,21 +1,24 @@
-.btn
-	+userSelect(none)
+.btn,
+input[type=submit],
+input[type=button],
+a[role=button]
+	user-select: none
 	position: relative
 	display: inline-block
 	+sq(auto)
 	overflow: hidden
 	vertical-align: middle
-	font-size: 13px
-	font-family: $font
-	line-height: 1
-	letter-spacing: tracking(85)
-	padding: 10px 30px
+	color: $blue
+	font: 14px/1 $font
+	letter-spacing: tracking(75)
+	text-transform: uppercase
+	padding: 0
+	border: 0
 	border-radius: 0
 	box-shadow: none
-	background: $blue
-	color: $white
+	background: none
 
 	&:hover
-		text-decoration: none
+		text-decoration: underline
 		box-shadow: none
-		background: lighten($blue, 10)
+		background: none

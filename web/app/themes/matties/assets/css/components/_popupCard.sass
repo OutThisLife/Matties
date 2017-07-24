@@ -1,9 +1,7 @@
 .popup-card
-	z-index: 700
 	+cover(fixed)
 	color: $blue
 	background: rgba(#000, .5)
-	animation: 0.4s ease-in-out fadeIn 1
 
 	&:not(.open)
 		opacity: 0
@@ -13,19 +11,19 @@
 		text-indent: -9999em
 
 	.inner
-		position: relative
+		position: absolute
+		top: 50%
+		left: 50%
 		min-width: 475px
 		text-align: center
 		padding: 50px 100px
+		transform: translate(-50%, -50%)
 		background: $peach
-		position: absolute
-		left: 50%
-		top: 50%
-		+transform(translate(-50%, -50%))
 
 		.exit
 			position: absolute
 			top: $pad !important
 			right: $pad
+
 	h2
 		margin: 0 auto 50px

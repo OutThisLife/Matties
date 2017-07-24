@@ -1,13 +1,13 @@
 #header
 	z-index: 550
 	display: flex
-	width: 100%
 	align-items: center
 	justify-content: space-between
 	+cover(fixed)
+	width: 100%
 	bottom: auto
 	padding: 22px $pad
-	+transition(.35s ease-in-out)
+	transition: .35s ease-in-out
 
 	@media (min-width: 767px)
 		position: fixed
@@ -22,10 +22,12 @@
 		.toggle-menu
 			color: transparent
 
-	a
-		@extend %supText
+	> *
 		display: inline-block
 		vertical-align: middle
+
+	a
+		@extend %supText
 
 		+bodyBg
 			color: $white

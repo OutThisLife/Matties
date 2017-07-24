@@ -35,7 +35,6 @@ body
 
 	// --
 
-	#header > *,
 	#footer-top a,
 	#footer-bottom,
 	#footer-page,
@@ -46,11 +45,16 @@ body
 		animation: fadeIn 1s 1s $easeOutSine forwards
 
 	#header > *
+		transition: 1s 1s $easeOutSine
+
+	&:not(.loaded) #header > *
+		opacity: 0
+
 		&:first-child
-			animation-name: slideFromLeft
+			transform: translateX(-15px)
 
 		&:last-child
-			animation-name: slideFromRight
+			transform: translateX(15px)
 
 	#footer-bottom
 		animation-name: slideFromBottom

@@ -1,6 +1,9 @@
 form
 	margin: 50px auto
 
+	.popup-card &
+		margin: auto
+
 	&.is-loading
 		cursor: progress
 
@@ -11,63 +14,43 @@ form
 		[type=submit]
 			background: #CCC
 
-	.gfield
-		position: relative
-
-		> .gfield_label
-			pointer-events: none
-			position: absolute
-			top: 14px
-			left: 0
-			color: #B6B6B6
-			font-weight: 300
-			font-size: 24px
-			+transition(.3s ease-in-out)
-
-			&.out
-				+transparentColour(#000, .5)
-				font-size: 16px
-				top: -15px
-
-		@media (min-width: $small)
-			&:nth-child(2n) > .gfield_label
-				left: 20px
+	label
+		color: $blue
+		font: 14px/1 $font
+		letter-spacing: tracking(75)
 
 	+inputs
 		display: block
 		width: 100%
 		height: auto
-		color: $default
-		line-height: 1
+		color: $blue
+		font: 14px/1 $font
+		letter-spacing: tracking(75)
 		margin: 0
-		padding: 10px 0
+		padding: 5px 0
 		border: 0
-		border-bottom: 1px solid #CCC
-		+boxSizing(border-box)
-		+transition(.3s ease-in-out)
-		+boxShadow(none)
-		background: #FFF
+		border-bottom: 1px solid $blue
+		box-sizing: border-box
+		transition: .3s ease-in-out
+		box-shadow: none
+		background: none
 
 		&:hover, &:focus, &:active
-			outline: none
-			border-bottom-color: #000
-			+boxShadow(none)
+			outline: none !important
+			border-color: $blue !important
+			box-shadow: none !important
+
+			+ label
+				color: $blue
 
 		+colourPlaceholder
-			color: rgba($default, .35)
-
-		&.is-blank:not(:focus)
-			color: transparent
-
-	.gfield_error
-		+inputs
-			border-bottom-color: red
+			color: $blue
 
 	select:not([readonly])
 		cursor: pointer
 		appearance: none
 		-webkit-appearance: none
-		background: #FFF url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAICAgICAgICAgIDAgICAwQDAgIDBAUEBAQEBAUGBQUFBQUFBgYHBwgHBwYJCQoKCQkMDAwMDAwMDAwMDAwMDAz/2wBDAQMDAwUEBQkGBgkNCwkLDQ8ODg4ODw8MDAwMDA8PDAwMDAwMDwwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wgARCAAFAAoDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABwj/xAAVAQEBAAAAAAAAAAAAAAAAAAAFB//aAAwDAQACEAMQAAABSlarRp08/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAUBFiX/2gAIAQEAAQUCdQisGSf/xAAjEQABAQYHAQAAAAAAAAAAAAABEQAFEiJhYgMVISQxMqPS/9oACAEDAQE/AXMXjlvGHEkkRmSoRDapFdG3l3f0+m//xAAaEQACAgMAAAAAAAAAAAAAAAAAEwOhIkFh/9oACAECAQE/AYWL1wzuz//EACEQAAEBBwUAAAAAAAAAAAAAAAECAAMEERI0YSVDYnHS/9oACAEBAAY/AkmuNDivUEQ6JuivCqgRykOm2LXFt5b/xAAZEAACAwEAAAAAAAAAAAAAAAARIQEQYYH/2gAIAQEAAT8hkgW0FGoNXVEf/9oADAMBAAIAAwAAABBv/8QAGhEBAQACAwAAAAAAAAAAAAAAAREAITHh8P/aAAgBAwEBPxATK80gzrZTrovvcv/EAB4RAAEDBAMAAAAAAAAAAAAAABEAAZEhMUFxgaHw/9oACAECAQE/EH4yFz1EQX2uXjtf/8QAGRAAAgMBAAAAAAAAAAAAAAAAAREAITFR/9oACAEBAAE/EDmz5FaDg+GdSox//9k=) 95% center no-repeat
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEFJREFUeNpi9ItuKWBgYPBnQAWBTEBiARAbALEDFB/ctLTmAxOIAHImQlU+AOIJKHqBRt4H4gQGdAAUVEDmAwQYAHCYEMHs7Mu6AAAAAElFTkSuQmCC') 95% center no-repeat
 
 		&::-ms-expand
 			display: none
@@ -82,6 +65,8 @@ form
 
 	p
 		text-align: inherit
+
+// -----------------------------------------------
 
 .gform_wrapper
 	+clearfix
@@ -101,6 +86,12 @@ form
 	#extensions_message
 		display: block
 
+	.gf_progressbar_wrapper
+		margin: 0 0 50px
+
+		.gf_progressbar_percentage
+			display: none
+
 	&[style="display:none"]
 		display: block
 
@@ -111,6 +102,9 @@ form
 
 	.gform_body
 		+clearfix
+
+	.gfield_label
+		font-weight: 700
 
 	ul li
 		text-align: left
@@ -140,8 +134,65 @@ form
 			pointer-events: none
 			cursor: not-allowed
 
+		span label
+			display: block
+			font-size: 13px
+			margin: 7px 0 0
+
+	.ginput_complex > span[class*="ginput_"]
+		display: block
+		margin: 0 0 15px
+
+	.gfield_error
+		+inputs
+			border-bottom-color: red
+
 	.gform_footer
 		clear: both
 		text-align: left
 		margin: 0
 		padding: 0
+
+	.gform_page_footer input[type=button]
+		display: inline-block
+		margin: 0 10px
+
+	img
+		transform: translate(10px, 0)
+
+// -----------------------------------------------
+
+#rc-portal
+	fieldset
+		border: 0
+		margin: 0
+		padding: 0
+
+	legend,
+	.required,
+	.sectionHeaderLine,
+	a[role=button],
+	.rc-footnote
+		display: none
+
+	.rc-label-input-pair
+		display: flex
+		align-items: center
+		justify-content: center
+		margin: 0
+
+		&:not(:last-child)
+			margin-bottom: 10px
+
+		.rc-input-column
+			margin: 0 0 0 auto
+			width: 62%
+
+		[type=checkbox]
+			position: static
+			width: auto
+
+	.rc-button-group
+		width: calc(100% + 50000px)
+		text-align: center
+		margin: 25px auto 0

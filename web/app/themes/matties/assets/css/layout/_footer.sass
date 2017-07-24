@@ -63,6 +63,13 @@
 			margin-left: 50px
 			text-decoration: underline
 
+	.popup-link a:before
+		content: 'Reserve Now'
+		text-transform: uppercase
+
+		@media (max-width: $small)
+			content: 'Reserve a Table \00BB'
+
 	.exit
 		position: absolute
 		right: $pad
