@@ -8,5 +8,5 @@ Array.from(document.getElementsByClassName('toggle-gallery')).forEach($a => {
 		$gallery.classList.toggle('open')
 	})
 })
-
-$gallery.addEventListener('click', () => $gallery.classList.toggle('open'))
+console.log($gallery.querySelector('.cover'))
+$gallery.querySelector('.cover').addEventListener('click', () => $gallery.classList.remove('open'))

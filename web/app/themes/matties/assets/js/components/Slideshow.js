@@ -52,7 +52,7 @@ class Slideshow extends PureComponent {
 						style={{ backgroundImage: `url(${slide.img})` }}
 					>
 						<img src={slide.img} alt="" />
-						<figcaption dangerouslySetInnerHTML={{ __html: slide.caption }} />
+						<figcaption className="hide-for-small" dangerouslySetInnerHTML={{ __html: slide.caption }} />
 					</figure>)
 				})}
 			</div>

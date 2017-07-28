@@ -4,7 +4,7 @@ if (!($slides = CFS()->get('slideshow', GALLERY)))
 ?>
 
 <div id="gallery">
-	<a href="javascript:;" class="cover toggle-gallery">
+	<a href="javascript:;" class="cover">
 		<i class="exit"></i>
 	</a>
 

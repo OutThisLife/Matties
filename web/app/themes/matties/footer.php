@@ -13,7 +13,7 @@
 	</div>
 
 	<div id="footer-bottom">
-		<a class="exit"></a>
+		<a class="exit exit-footer"></a>
 		<p class="hide-for-small">
 			Reserve a table at our a la carte brunch, every Saturday and Sunday from 11am - 2pm
 		</p>
