@@ -14,8 +14,13 @@
 				<?=gravity_form(2, 0, 0, 0, 0, 1)?>
 
 
-				<a href="javascript:;">Facebook</a>
-				<a href="javascript:;">Instagram</a>
+				<a href="https://www.facebook.com/mattiesaustin/" target="_blank" rel="noopener noreferrer">
+					Facebook
+				</a>
+
+				<a href="https://www.instagram.com/mattiesaustin/?hl=en" target="_blank" rel="noopener noreferrer">
+					Instagram
+				</a>
 			</div>
 		</div>
 
