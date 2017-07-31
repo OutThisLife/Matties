@@ -32,8 +32,11 @@ class Tabs extends Component {
 		this.$sections[n].classList.add('active')
 	}
 
-	handleClick(tab) {
-		this.setState({ tab })
+	handleClick(tab, e) {
+		if (window.innerWidth < 767)
+			e.preventDefault()
+
+		else this.setState({ tab })
 	}
 
 	render() {

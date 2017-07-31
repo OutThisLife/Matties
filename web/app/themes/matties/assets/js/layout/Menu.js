@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { render } from 'react-dom'
 import PropTypes from 'prop-types'
+import raf from 'raf'
 
 // -----------------------------------------------
 
@@ -8,8 +9,10 @@ const $menu = document.getElementById('menu')
 
 class Menu extends PureComponent {
 	componentDidMount() {
-		this.scroll_int = null
-		const $scroll = this.el.querySelector('.scroller')
+		this.speed = 0
+		this.scroll = 0
+		this.prevFrame = new Date().getTime()
+		this.$scroller = this.el.querySelector('.scroller')
 
 		Array.from(document.getElementsByClassName('toggle-menu')).forEach($a => {
 			$a.addEventListener('click', () => {
@@ -19,30 +22,43 @@ class Menu extends PureComponent {
 			})
 		})
 
-		this.el.addEventListener('mousewheel', e => {
-			e.preventDefault()
+		this.updateScroll()
+		this.el.addEventListener('mousemove', this.handleMouseMove.bind(this))
+		this.el.addEventListener('mouseleave', this.handleMouseLeave.bind(this))
+	}
 
-			if (e.deltaY < 0 || e.wheelDeltaX > 0) {
-				$scroll.scrollLeft -= 15
-			} else if (e.deltaY > 0 || e.wheelDeltaX < 0) {
-				$scroll.scrollLeft += 15
-			}
-		})
+	handleMouseMove(e) {
+		this.speed = (100 * (e.pageX - this.el.offsetLeft) / this.el.clientWidth) - 50
+	}
 
-		if (window.innerWidth >= 768)
-			this.el.addEventListener('mousemove', e => {
-				clearInterval(this.scroll_int)
+	handleMouseLeave() {
+		this.speed = 0
+	}
 
-				if (e.clientX <= 500) {
-					this.scroll_int = setInterval(() => {
-						$scroll.scrollLeft -= 10
-					}, 25)
-				} else if (e.clientX > window.innerWidth - 500) {
-					this.scroll_int = setInterval(() => {
-						$scroll.scrollLeft += 10
-					}, 25)
+	updateScroll() {
+		const fn = () => {
+			const
+				curFrame = new Date().getTime(),
+				elapsed = curFrame - this.prevFrame
+
+			this.prevFrame = curFrame
+
+			if (this.speed !== 0) {
+				this.scroll += this.speed * elapsed / 50
+
+				if (this.scroll < 0) {
+					this.scroll = 0
+				} else if (this.scroll > this.$scroller.scrollWidth) {
+					this.scroll = this.$scroller.scrollWidth
 				}
-			})
+
+				this.$scroller.scrollLeft = this.scroll
+			}
+
+			raf(fn)
+		}
+
+		raf(fn)
 	}
 
 	render() {

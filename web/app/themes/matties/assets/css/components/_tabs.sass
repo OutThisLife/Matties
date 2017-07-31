@@ -20,6 +20,9 @@ ul.tabs
 			&:not(:hover)
 				color: $default
 
+		&:not(.active) > a
+			opacity: .7
+
 		&.active a
 			background-image: linear-gradient(to bottom, $blue 50%, $blue 50%)
 

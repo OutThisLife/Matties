@@ -73,3 +73,6 @@
 
 <!-- Gallery -->
 <?php Template::partial('gallery.php') ?>
+
+<!-- Reserve portal -->
+<?php Template::partial('rc-portal.php') ?>

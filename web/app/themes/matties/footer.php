@@ -10,17 +10,19 @@
 	<div id="footer-top">
 		<div class="social-block">
 			<a href="javascript:;">Follow / Newsletter</a>
+
 			<div class="social">
-				<?=gravity_form(2, 0, 0, 0, 0, 1)?>
-
-
 				<a href="https://www.facebook.com/mattiesaustin/" target="_blank" rel="noopener noreferrer">
 					Facebook
 				</a>
 
+				<span>/</span>
+
 				<a href="https://www.instagram.com/mattiesaustin/?hl=en" target="_blank" rel="noopener noreferrer">
 					Instagram
 				</a>
+
+				<?=gravity_form(2, 0, 0, 0, 0, 1)?>
 			</div>
 		</div>
 
@@ -40,9 +42,9 @@
 	</div>
 
 	<?php if (!is_front_page()): ?>
-	<div id="footer-page" itemscope itemtype="http://schema.org/WPFooter">
-		<ul><?=BackEnd::getMenu('footer')?></ul>
-	</div>
+		<div id="footer-page" itemscope itemtype="http://schema.org/WPFooter">
+			<ul><?=BackEnd::getMenu('footer')?></ul>
+		</div>
 	<?php endif ?>
 </footer>
 
@@ -52,6 +54,7 @@
 <?php wp_footer() ?>
 
 <script src="<?=assetDir?>/js/dist/main.js?v=<?=ASSET_VERSION?>"></script>
+<script id="rc-script" src="https://www.reservecloud.com/scripts/portals/rcPortal.js" rc-target="eventLeads" defer></script>
 
 </body>
 </html>

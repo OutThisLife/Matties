@@ -1,4 +1,7 @@
 <?php
+if (CFS()->get('is_excluded'))
+	return;
+
 $isGallery = get_the_ID() === GALLERY;
 $class = $isGallery ? 'toggle-gallery' : '';
 $url = $isGallery ? 'javascript:;' : get_permalink();

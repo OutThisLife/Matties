@@ -51,6 +51,7 @@ class Slideshow extends PureComponent {
 						key={Math.random()}
 						className={slide.orientation}
 						style={{
+							border: slide.border ? '10px solid #FFF' : '0',
 							backgroundImage: `url(${slide.img})`,
 						}}
 					>

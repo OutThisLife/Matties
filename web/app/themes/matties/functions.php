@@ -54,7 +54,7 @@ require_once 'classes/sys/autoloader.php';
 		return '<a
 			href="javascript:;"
 			class="btn cta"
-			onClick="javascript:header.querySelector(\'.popup-link a\').click();"
+			onClick="javascript:rc.querySelector(\'.popup-link a\').click();"
 		>'. $args['title'] .'</a>';
 	},
 
@@ -136,6 +136,7 @@ function parseSlides($slides, $size = 'full', $options = []) {
 			'width' => $width,
 			'height' => $height,
 			'orientation' => $orientation,
+			'border' => $slide['has_border'] ?: false,
 		];
 	endforeach;
 

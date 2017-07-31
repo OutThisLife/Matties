@@ -22,25 +22,36 @@ $sections = CFS()->get('sections');
 	<div id="page" class="menu" itemprop="MainContentOfPage">
 		<h2><?php the_title() ?></h2>
 
-		<ul class="tabs">
-		<?php
-		foreach ($menus AS $menu)
-			echo '<li><a href="javascript:;">', $menu['title'], '</a></li>';
-		?>
-		</ul>
+		<div class="hide-for-small">
+			<ul class="tabs">
+			<?php
+			foreach ($menus AS $menu)
+				echo '<li><a href="javascript:;">', $menu['title'], '</a></li>';
+			?>
+			</ul>
 
-		<div class="tabs-container">
-			<?php foreach ($menus AS $menu): ?>
-			<div class="tab-content">
-				<a href="<?=$menu['menu_pdf']?>" target="_blank">
-					<img src="<?=$menu['pdf_image']?>" />
-				</a>
+			<div class="tabs-container">
+				<?php foreach ($menus AS $menu): ?>
+				<div class="tab-content">
+					<a href="<?=$menu['menu_pdf']?>" target="_blank" rel="noopener noreferrer">
+						<img src="<?=$menu['pdf_image']?>" />
+					</a>
+				</div>
+				<?php endforeach ?>
 			</div>
-			<?php endforeach ?>
+
+			<div class="disclaimer center-align">
+				<?=CFS()->get('disclaimer')?>
+			</div>
 		</div>
 
-		<div class="disclaimer center-align">
-			<?=CFS()->get('disclaimer')?>
+		<div class="show-for-small center-align">
+		<?php
+		foreach ($menus AS $menu)
+			echo '<p><a href="', $menu['pdf'], '" target="_blank" rel="noopener noreferrer">
+				View ', $menu['title'], ' Menu
+			</a></p>';
+		?>
 		</div>
 	</div>
 </div>

@@ -12,7 +12,7 @@ import './components/Tabs'
 import AnimateOut from './modules/AnimateOut'
 
 Array.from(document.querySelectorAll('[href]')).forEach(el => {
-	const href = el.getAttribute('href')
+	const { href, target } = el
 
 	if (
 		(
@@ -21,6 +21,7 @@ Array.from(document.querySelectorAll('[href]')).forEach(el => {
 		)
 		&& !/#/.test(href)
 		&& !/javascript/.test(href)
+		&& target !== '_blank'
 	) el.addEventListener('click', (e) => {
 		e.preventDefault()
 		return AnimateOut(href)
