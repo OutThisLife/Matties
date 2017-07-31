@@ -26,7 +26,7 @@
 
 #footer-top
 	display: flex
-	align-items: center
+	align-items: flex-end
 	justify-content: space-between
 	padding: 28px $pad
 
@@ -44,14 +44,26 @@
 		.lock &
 			color: $blue
 
+// -----------------------------------------------
+
 .social-block
 	position: relative
+	transition: 1s ease-in-out
+
+	> a
+		position: absolute
+		left: 0
+		bottom: 0
+
+	&:not(.active) .social,
+	&.active > a
+		opacity: 0
+
+	.social
+		transition: inherit
 
 	&:not(.active) .social
-		display: none
-
-	&.active > a
-		display: none
+		pointer-events: none
 
 	.social a
 		display: inline-block
@@ -93,8 +105,11 @@
 				color: $blue
 
 			&::placeholder
-				opacity: .5
+				opacity: .7
 				color: currentColor
+
+				.lock &
+					opacity: .5
 
 		[type=submit]
 			display: inline-block
@@ -105,6 +120,8 @@
 
 			body:not(.lock) &
 				filter: brightness(100)
+
+// -----------------------------------------------
 
 #footer-bottom
 	display: flex
