@@ -93,15 +93,17 @@
 
 	figure > a
 		@extend .full-bg
-		display: block
-		overflow: hidden
-		transition: .4s $easeOutSine
 
-		img
-			visibility: hidden
-			transform-origin: center
+		@media (min-width: $small)
+			display: block
+			overflow: hidden
 			transition: .4s $easeOutSine
 
-		&:hover img
-			visibility: visible
-			transform: scale(1.02)
+			img
+				visibility: hidden
+				transform-origin: center
+				transition: .4s $easeOutSine
+
+			&:hover img
+				visibility: visible
+				transform: scale(1.02)

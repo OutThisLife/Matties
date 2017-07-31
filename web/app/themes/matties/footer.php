@@ -8,7 +8,20 @@
 
 <footer id="footer" itemscope itemtype="http://schema.org/WPFooter">
 	<div id="footer-top">
-		<a href="javascript:;">Follow / Newsletter</a>
+		<div class="social-block">
+			<a href="javascript:;">Follow / Newsletter</a>
+			<div class="social">
+				<a href="javascript:;">Facebook</a>
+				<a href="javascript:;">Instagram</a>
+
+				<form>
+					<label for="newsletter">
+						Stay Up-To-Date
+						<input type="text" placeholder="Enter Email" />
+					</label>
+				</form>
+			</div>
+		</div>
 		<a href="tel:5124441888">(512) 444-1888</a>
 	</div>
 
