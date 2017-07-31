@@ -46,12 +46,16 @@ require_once 'classes/sys/autoloader.php';
 
 	# [button]
 	'button' => function($args, $content = '') {
-		return '<a href="'. $args['url'] .'" class="btn '. $args['style'] .'">'. $content .'</a>';
+		return '<a href="'. $args['url'] .'" class="btn cta '. $args['style'] .'">'. $content .'</a>';
 	},
 
 	# [reserve]
 	'reserve' => function($args) {
-		return '<a href="javascript:;" class="btn" onClick="javascript:header.querySelector(\'.popup-link a\').click();">'. $args['title'] .'</a>';
+		return '<a
+			href="javascript:;"
+			class="btn cta"
+			onClick="javascript:header.querySelector(\'.popup-link a\').click();"
+		>'. $args['title'] .'</a>';
 	},
 
 	# [grid]
