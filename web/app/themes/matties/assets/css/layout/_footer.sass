@@ -55,14 +55,14 @@
 		left: 0
 		bottom: 0
 
-	&:not(.active) .social,
-	&.active > a
+	&:not(:hover) .social,
+	&:hover > a
 		opacity: 0
 
 	.social
 		transition: inherit
 
-	&:not(.active) .social
+	&:not(:hover) .social
 		pointer-events: none
 
 	.social a[href],
