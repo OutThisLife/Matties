@@ -30,6 +30,8 @@
 	<![endif]-->
 
 	<?=FrontEnd::typekit('bti8yhr')?>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
 
 	<?php if (strstr($_SERVER['SERVER_NAME'], 'localhost')): ?>
 	<script src="//<?=$_SERVER['SERVER_NAME']?>:9091/livereload.js"></script>

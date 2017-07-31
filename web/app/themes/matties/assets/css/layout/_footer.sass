@@ -53,25 +53,58 @@
 	&.active > a
 		display: none
 
-	.social, .social form label
-		display: flex
-		justify-content: space-between
-		align-items: center
-		text-transform: uppercase
-		color: $white
-
 	.social a
-		margin: 0 10px
+		display: inline-block
+		vertical-align: middle
+		margin-right: 10px
 
-	.social input:not([readonly])
-		border-color: $white !important
-		color: $white
+	.social form
+		width: 100%
+		margin: 0 0 15px
 
-		&:hover, &:focus
-			border-color: $white !important
+		*
+			display: inline
+			vertical-align: middle
+			color: $white
+			margin: 0
+			padding: 0
 
-		&::placeholder
-			color: $white !important
+			.lock &
+				color: $blue
+
+		label
+			@extend %supText
+
+		.gform_body,
+		.ginput_container,
+		.gform_footer
+			display: inline-block
+			vertical-align: middle
+
+		.ginput_container
+			margin-left: $pad / 2
+
+		input[type=email]:not([readonly])
+			padding: 0
+			color: $white
+			border-color: currentColor !important
+
+			.lock &
+				color: $blue
+
+			&::placeholder
+				opacity: .5
+				color: currentColor
+
+		[type=submit]
+			display: inline-block
+			width: 7px
+			height: 9px
+			text-indent: -999em
+			background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAJCAMAAADJhsaRAAAAJ1BMVEUAAABOW4ROW4ROW4ROW4ROW4ROW4ROW4ROW4ROW4ROW4ROW4ROW4TLySgCAAAADHRSTlMAECAwQFBgn6/P3+/YD3W5AAAAMElEQVQI12NgYGYAAxYeDkYwg42bCyLEzM3DBhHh4WEGS3CzgnmcTCBZHnaIRoguAB5NANEedjZqAAAAAElFTkSuQmCC) no-repeat
+
+			body:not(.lock) &
+				filter: brightness(100)
 
 #footer-bottom
 	display: flex

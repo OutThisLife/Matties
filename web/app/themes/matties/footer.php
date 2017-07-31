@@ -11,17 +11,14 @@
 		<div class="social-block">
 			<a href="javascript:;">Follow / Newsletter</a>
 			<div class="social">
+				<?=gravity_form(2, 0, 0, 0, 0, 1)?>
+
+
 				<a href="javascript:;">Facebook</a>
 				<a href="javascript:;">Instagram</a>
-
-				<form>
-					<label for="newsletter">
-						Stay Up-To-Date
-						<input type="text" placeholder="Enter Email" />
-					</label>
-				</form>
 			</div>
 		</div>
+
 		<a href="tel:5124441888">(512) 444-1888</a>
 	</div>
 
