@@ -16,6 +16,12 @@
 		visibility: visible
 		transform: translate(0, 47px)
 
+	svg
+		width: 129px
+
+		.st0
+			fill: $white !important
+
 // -----------------------------------------------
 
 #footer-top
@@ -37,6 +43,35 @@
 
 		.lock &
 			color: $blue
+
+.social-block
+	position: relative
+
+	&:not(.active) .social
+		display: none
+
+	&.active > a
+		display: none
+
+	.social, .social form label
+		display: flex
+		justify-content: space-between
+		align-items: center
+		text-transform: uppercase
+		color: $white
+
+	.social a
+		margin: 0 10px
+
+	.social input:not([readonly])
+		border-color: $white !important
+		color: $white
+
+		&:hover, &:focus
+			border-color: $white !important
+
+		&::placeholder
+			color: $white !important
 
 #footer-bottom
 	display: flex

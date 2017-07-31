@@ -32,22 +32,9 @@ $sections = CFS()->get('sections');
 		<div class="tabs-container">
 			<?php foreach ($menus AS $menu): ?>
 			<div class="tab-content">
-				<?php foreach ($menu['sections'] AS $section): ?>
-				<section class="<?=key($section['style'])?>">
-					<h3><?=$section['title']?></h3>
-
-					<?php foreach ($section['items'] AS $item): ?>
-					<div class="item">
-						<div class="item-row">
-							<strong class="item-name"><?=$item['title']?></strong>
-							<small class="price"><?=$item['price']?></small>
-						</div>
-
-						<em class="description"><?=$item['desc']?></em>
-					</div>
-					<?php endforeach ?>
-				</section>
-				<?php endforeach ?>
+				<a href="<?=$menu['menu_pdf']?>" target="_blank">
+					<img src="<?=$menu['pdf_image']?>" />
+				</a>
 			</div>
 			<?php endforeach ?>
 		</div>
