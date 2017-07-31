@@ -49,6 +49,11 @@ require_once 'classes/sys/autoloader.php';
 		return '<a href="'. $args['url'] .'" class="btn '. $args['style'] .'">'. $content .'</a>';
 	},
 
+	# [reserve]
+	'reserve' => function($args) {
+		return '<a href="javascript:;" class="btn" onClick="javascript:header.querySelector(\'.popup-link a\').click();">'. $args['title'] .'</a>';
+	},
+
 	# [grid]
 	'grid' => function($args, $content) {
 		return '<div class="grid grid-'. $args['cols'] .'">'. do_shortcode($content) .'</div>';
@@ -116,11 +121,19 @@ add_filter('wp_get_attachment_url', function($url) {
 function parseSlides($slides, $size = 'full', $options = []) {
 	$data = array_merge($options, ['slides' => []]);
 
-	foreach ($slides AS $slide)
+	foreach ($slides AS $slide):
+		$img = FrontEnd::getSrc($slide['image'], $size);
+		list ($width, $height) = getimagesize($img);
+		$orientation = $width > $height ? 'landscape' : 'portrait';
+
 		$data['slides'][] = [
 			'caption' => $slide['title'],
-			'img' => FrontEnd::getSrc($slide['image'], $size),
+			'img' => $img,
+			'width' => $width,
+			'height' => $height,
+			'orientation' => $orientation,
 		];
+	endforeach;
 
 	return json_encode($data);
 }

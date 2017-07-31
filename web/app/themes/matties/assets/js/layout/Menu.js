@@ -8,6 +8,7 @@ const $menu = document.getElementById('menu')
 
 class Menu extends PureComponent {
 	componentDidMount() {
+		this.scroll_int = null
 		const $scroll = this.el.querySelector('.scroller')
 
 		Array.from(document.getElementsByClassName('toggle-menu')).forEach($a => {
@@ -22,11 +23,26 @@ class Menu extends PureComponent {
 			e.preventDefault()
 
 			if (e.deltaY < 0 || e.wheelDeltaX > 0) {
-				$scroll.scrollLeft -= 30
+				$scroll.scrollLeft -= 15
 			} else if (e.deltaY > 0 || e.wheelDeltaX < 0) {
-				$scroll.scrollLeft += 30
+				$scroll.scrollLeft += 15
 			}
 		})
+
+		if (window.innerWidth >= 768)
+			this.el.addEventListener('mousemove', e => {
+				clearInterval(this.scroll_int)
+
+				if (e.clientX <= 500) {
+					this.scroll_int = setInterval(() => {
+						$scroll.scrollLeft -= 10
+					}, 25)
+				} else if (e.clientX > window.innerWidth - 500) {
+					this.scroll_int = setInterval(() => {
+						$scroll.scrollLeft += 10
+					}, 25)
+				}
+			})
 	}
 
 	render() {

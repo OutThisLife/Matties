@@ -36,18 +36,23 @@
 		margin-top: 7px
 		transition-property: opacity
 
-		path
-			fill: transparent
-			stroke: currentColor
-			stroke-dasharray: 1000
-			stroke-dashoffset: 1000
-			animation: dash 0s $easeOutCubic forwards
+		@media (min-width: $small)
+			path
+				fill: transparent
+				stroke: currentColor
+				stroke-dasharray: 1000
+				stroke-dashoffset: 1000
+				animation: dash 0s $easeOutCubic forwards
 
-			.home &
-				animation-duration: 5s
+				.home &
+					animation-duration: 5s
 
-		&:hover path
-			animation: dash 5s $easeOutCubic infinite
+			&:hover path
+				animation: dash 5s $easeOutCubic infinite
+
+		@media (max-width: $small)
+			path
+				fill: currentColor
 
 	@media (min-width: $small)
 		&.animate-out svg

@@ -49,7 +49,10 @@ class Slideshow extends PureComponent {
 				{this.props.slides.map(slide => {
 					return (<figure
 						key={Math.random()}
-						style={{ backgroundImage: `url(${slide.img})` }}
+						className={slide.orientation}
+						style={{
+							backgroundImage: `url(${slide.img})`,
+						}}
 					>
 						<img src={slide.img} alt="" />
 						<figcaption className="hide-for-small" dangerouslySetInnerHTML={{ __html: slide.caption }} />

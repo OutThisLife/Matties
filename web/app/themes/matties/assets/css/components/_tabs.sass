@@ -15,12 +15,13 @@ ul.tabs
 
 		a
 			@extend %supText
+			text-decoration: none !important
 
 			&:not(:hover)
 				color: $default
 
 		&.active a
-			text-decoration: underline
+			background-image: linear-gradient(to bottom, $blue 50%, $blue 50%)
 
 .tab-content:not(.active)
 	display: none

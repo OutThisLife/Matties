@@ -29,6 +29,10 @@
 	nav a
 		z-index: 102
 
+		@media (max-width: $small)
+			top: auto
+			bottom: 0
+
 	nav a path
 		fill: $white
 
@@ -38,5 +42,17 @@
 		right: auto
 		bottom: auto
 		left: 50%
-		border: 10px solid $white
 		transform: translate(-50%, -50%)
+
+		@media (max-width: $small)
+			left: 10%
+			right: 10%
+			transform: translate(0, -50%)
+
+		&.landscape
+			left: 10%
+			right: 10%
+			transform: translate(0, -50%)
+
+			img
+				width: 100%
