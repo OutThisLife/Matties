@@ -112,20 +112,22 @@ slideshow
 				left: -$pad * 2
 
 				@media (max-width: $small)
-					left: -65px
+					left: -60px
 
 			&:last-child
 				right: -$pad * 2
 
 				@media (max-width: $small)
-					right: 65px
+					right: -60px
 
 		slideshow[data-bg="dark"] nav a
 			filter: brightness(0) invert(1)
+			-webkit-filter: brightness(0) invert(1)
 
 		@media (min-width: $small)
 			&:not(:hover) nav a
 				filter: opacity(0)
+				-webkit-filter: opacity(0)
 
 				&:first-child
 					margin-left: -10px
