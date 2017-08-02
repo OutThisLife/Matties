@@ -15,6 +15,7 @@ require_once 'classes/sys/autoloader.php';
  */
 ->addImageSizes([[
 	'menu' => [465, 308],
+	'event' => [400],
 ]])
 
 // -----------------------------------------------
