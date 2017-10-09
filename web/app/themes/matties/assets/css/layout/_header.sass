@@ -33,6 +33,26 @@
 		+bodyBg
 			color: $white
 
+	.main-menu
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 75%
+		margin: 0 auto
+		padding: 0
+
+		li 
+			margin: 0
+
+			a
+				background: none
+
+		@media (max-width: $small)
+			width: auto
+
+			li:not(.logo)
+				display: none
+
 	svg
 		margin-top: 7px
 		transition-property: opacity
@@ -63,6 +83,11 @@
 				opacity: 1
 
 	.toggle-menu
+		display: none
+
+		@media (max-width: $small)
+			display: block
+
 		&.is-open
 			color: transparent
 

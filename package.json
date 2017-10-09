@@ -4,7 +4,7 @@
  "description": "Run WP locally with remote .env vars",
  "main": "index.js",
  "scripts": {
-  "dev": "parallelshell \"composer dev\" \"cd web/app/themes/matties/ && yarn && yarn dev\"",
+  "dev": "parallelshell \"php -S localhost:8000 -t web\" \"cd web/app/themes/matties/ && yarn && yarn dev\"",
   "deploy:ftp": "node deploy",
   "wkill": "taskkill /f /im node.exe"
  },
