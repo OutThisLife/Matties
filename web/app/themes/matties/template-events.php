@@ -31,66 +31,6 @@ the_post();
 				<?=$event['copy']?>
 			</figcaption>
 		</figure>
-		<figure class="event">
-			<img src="<?=FrontEnd::getSrc($event['image'], 'event')?>" />
-
-			<figcaption>
-				<p>
-					<span><?=$event['title']?></span>
-					<strong><?=$event['time']?></strong>
-				</p>
-
-				<?=$event['copy']?>
-			</figcaption>
-		</figure>
-		<figure class="event">
-			<img src="<?=FrontEnd::getSrc($event['image'], 'event')?>" />
-
-			<figcaption>
-				<p>
-					<span><?=$event['title']?></span>
-					<strong><?=$event['time']?></strong>
-				</p>
-
-				<?=$event['copy']?>
-			</figcaption>
-		</figure>
-		<figure class="event">
-			<img src="<?=FrontEnd::getSrc($event['image'], 'event')?>" />
-
-			<figcaption>
-				<p>
-					<span><?=$event['title']?></span>
-					<strong><?=$event['time']?></strong>
-				</p>
-
-				<?=$event['copy']?>
-			</figcaption>
-		</figure>
-		<figure class="event">
-			<img src="<?=FrontEnd::getSrc($event['image'], 'event')?>" />
-
-			<figcaption>
-				<p>
-					<span><?=$event['title']?></span>
-					<strong><?=$event['time']?></strong>
-				</p>
-
-				<?=$event['copy']?>
-			</figcaption>
-		</figure>
-		<figure class="event">
-			<img src="<?=FrontEnd::getSrc($event['image'], 'event')?>" />
-
-			<figcaption>
-				<p>
-					<span><?=$event['title']?></span>
-					<strong><?=$event['time']?></strong>
-				</p>
-
-				<?=$event['copy']?>
-			</figcaption>
-		</figure>
 	<?php endforeach ?>
 	</div>
 </div>
